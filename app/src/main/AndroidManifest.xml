@@ -46,6 +46,10 @@
             android:name=".WebviewToursActivity"
             android:label="@string/title_activity_webviewtours" >
         </activity>
+        <activity
+            android:name=".DirectoryActivity"
+            android:label="@string/title_activity_directory" >
+        </activity>
     </application>
 
 </manifest>

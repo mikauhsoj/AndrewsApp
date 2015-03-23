@@ -10,5 +10,6 @@
     <string name="title_activity_selftour_guide">SelftourGuide</string>
     <string name="title_activity_aboutus">Aboutus</string>
     <string name="title_activity_webviewtours">Webviewtours</string>
+    <string name="title_activity_directory">DirectoryActivity</string>
 
 </resources>
