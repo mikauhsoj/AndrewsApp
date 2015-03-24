@@ -7,7 +7,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity {
@@ -71,10 +73,51 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(41.962708, -86.359760),14.0f));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.962708, -86.359760)).title("Andrews University"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.965497, -86.361667)).title("MeierHall"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng( 41.966215, -86.363742)).title("University_Towers"));
 
+        final String[][] arraymapsr = {{"Andrews University", "41.962708", "-86.359760"},
+                {"Andrews Airpark", "41.950541", "-86.365176"},
+                {"Andrews DairyFarm", "41.972163", " -86.361965"},
+                {"Lamson Hall", "41.963363", "-86.36034"},
+                {"MeierHall", "41.965497", " -86.361667"},
+                {"University_Towers", "41.966215", "-86.363742"}};
+
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(41.962708, -86.359760), 13.0f));
+        if (mMap.getCameraPosition().zoom == 13) {
+            for (int i = 0; i < 3; i++) {
+
+                mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(arraymapsr[i][1]), Double.parseDouble(arraymapsr[i][2]))).title(arraymapsr[i][0]));
+                //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.965497, -86.361667)).title("MeierHall"));
+                //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.966215, -86.363742)).title("University_Towers"));
+            }
+        }
+
+        mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
+            @Override
+            public void onCameraChange(CameraPosition cameraPosition) {
+                if (cameraPosition.zoom > 15) {
+                    for (int i = 3; i < 6; i++) {
+                        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(arraymapsr[i][1]), Double.parseDouble(arraymapsr[i][2]))).title(arraymapsr[i][0]));
+                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.965497, -86.361667)).title("MeierHall")).setVisible(cameraPosition.zoom > 15);
+                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.966215, -86.363742)).title("University_Towers")).setVisible(cameraPosition.zoom > 15);
+                    }
+
+
+                }
+                /* TODO implement a way to remove markers */
+                if (cameraPosition.zoom < 12) {
+                    for (int i = 3; i < 6; i++) {
+
+                        mMap.clear();
+
+
+                        // mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(arraymapsr[i][1]), Double.parseDouble(arraymapsr[i][2]))).title(arraymapsr[i][0])).setVisible(false);
+                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.965497, -86.361667)).title("MeierHall")).setVisible(cameraPosition.zoom > 15);
+                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.966215, -86.363742)).title("University_Towers")).setVisible(cameraPosition.zoom > 15);
+                    }
+
+                }
+            }
+        });
     }
 }
