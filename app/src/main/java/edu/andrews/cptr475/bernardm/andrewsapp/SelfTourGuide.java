@@ -89,6 +89,7 @@ public class SelfTourGuide extends ActionBarActivity {
             {
                 //  This will create dynamic image view and add them to ViewFlipper
                 setFlipperImage(gallery_grid_Images[i]);
+                mviewflipper.setInAnimation(container.getContext(), R.anim.infrontleft);
             }
             maboutus=(Button) rootView.findViewById(R.id.aboutus);
             maboutus.setOnClickListener(new View.OnClickListener(){
