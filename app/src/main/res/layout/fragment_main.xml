@@ -61,6 +61,14 @@
                 android:src="@drawable/searching23"
                 android:nestedScrollingEnabled="false"/>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@drawable/searching23"
+                android:nestedScrollingEnabled="false"
+                android:layout_gravity="bottom"/>
+
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
