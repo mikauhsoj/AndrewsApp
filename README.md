@@ -1,9 +1,7 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 This application is a requirement for CS475 at Andrews University.
-It will implement:
-A map view, food view, directory, calendar, news feed etc. 
+It will implement: A map view, food view, directory, calendar, news feed etc. 
 
 
 ### What is this repository for? ###
