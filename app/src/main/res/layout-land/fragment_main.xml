@@ -9,13 +9,12 @@
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 tools:context=".MainActivity$PlaceholderFragment"
                 android:background="#fff7f9fd">
-
-    <!-- Vertical layout is 4 icons across vs 5 in horizontal-->
+    <!-- Horizontal layout is 5 icons across vs 4 in vertical-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:weightSum="4"
+        android:weightSum="5"
         android:id="@+id/linearLayout"
         android:paddingTop="16dp">
 
@@ -57,17 +56,6 @@
             android:layout_weight="1"
             android:text="Weather"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:weightSum="4"
-        android:id="@+id/linearLayout2"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="16dp">
-
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -76,6 +64,18 @@
             android:src="@drawable/news_icon"
             android:layout_weight="1"
             android:text="News"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:weightSum="5"
+        android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="16dp">
 
         <ImageButton
             android:layout_width="0dp"
