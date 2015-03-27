@@ -16,6 +16,7 @@ import com.google.android.gms.ads.AdView;
 
 public class MainActivity extends ActionBarActivity {
 
+//Mainactivity updated 3/27/2015
 
 // <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_key"/>
 
