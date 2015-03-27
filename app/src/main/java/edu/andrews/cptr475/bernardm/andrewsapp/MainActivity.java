@@ -1,6 +1,7 @@
 package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -65,6 +66,7 @@ public class MainActivity extends ActionBarActivity {
 
         private ImageButton mgooglemaps;
         private ImageButton mselfguidedtour;
+        private ImageButton mnewsrss;
         public PlaceholderFragment() {
         }
 
@@ -84,6 +86,11 @@ public class MainActivity extends ActionBarActivity {
             getActivity().startActivity(i);
         }
 
+        private void displayrssnews() {
+
+            Intent i = new Intent(getActivity(), CampusNews.class);
+            getActivity().startActivity(i);
+        }
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -106,6 +113,17 @@ public class MainActivity extends ActionBarActivity {
                 }
 
             });
+
+            mnewsrss = (ImageButton) rootView.findViewById(R.id.news);
+            mnewsrss.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displayrssnews();
+                }
+            });
+
+
+            ///code to create a banner for comments
            /* AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);*/

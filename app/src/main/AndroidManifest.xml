@@ -55,6 +55,10 @@
             android:name=".DirectoryActivity"
             android:label="@string/title_activity_directory">
         </activity>
+        <activity
+            android:name=".CampusNews"
+            android:label="@string/app_name">
+        </activity>
     </application>
 
 </manifest>
