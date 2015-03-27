@@ -1,3 +1,4 @@
+<!-- Fragment_main.xml is the layout for the app's home screen-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 xmlns:ads="http://schemas.android.com/apk/res-auto"
