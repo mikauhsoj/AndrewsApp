@@ -7,6 +7,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+/**
+ * @author Bernardo Martinez
+ * @version 0.1
+ */
 public class CustomMapFragment extends com.google.android.gms.maps.SupportMapFragment {
 
     private final LatLng HAMBURG = new LatLng(53.558, 9.927);

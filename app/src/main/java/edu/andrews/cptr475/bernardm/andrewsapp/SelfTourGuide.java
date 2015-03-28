@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+/**
+ * @author Bernardo Martinez
+ * @version 0.1
+ */
 
 public class SelfTourGuide extends ActionBarActivity {
 
@@ -63,19 +67,20 @@ public class SelfTourGuide extends ActionBarActivity {
 
 
         private void setFlipperImage(int res) {
-          //  Log.i("Set Filpper Called", res+"");
+            //  Log.i("Set Filpper Called", res+"");
             ImageView image = new ImageView(getActivity().getApplicationContext());
             image.setBackgroundResource(res);
             mviewflipper.addView(image);
         }
-        private void displayaboutuspage(){
-            Intent i = new Intent(getActivity(),AboutUs.class);
+
+        private void displayaboutuspage() {
+            Intent i = new Intent(getActivity(), AboutUs.class);
             getActivity().startActivity(i);
         }
 
 
-        private void displaywebviewtour(){
-            Intent i = new Intent(getActivity(),WebviewToursActivity.class);
+        private void displaywebviewtour() {
+            Intent i = new Intent(getActivity(), WebviewToursActivity.class);
             getActivity().startActivity(i);
         }
 
@@ -83,28 +88,27 @@ public class SelfTourGuide extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_selftour_guide, container, false);
-           mviewflipper=(ViewFlipper) rootView.findViewById(R.id.FotosFlipper);
-            int gallery_grid_Images[]={R.drawable.globe,R.drawable.seminary};
-            for(int i=0;i<gallery_grid_Images.length;i++)
-            {
+            mviewflipper = (ViewFlipper) rootView.findViewById(R.id.FotosFlipper);
+            int gallery_grid_Images[] = {R.drawable.globe, R.drawable.seminary};
+            for (int i = 0; i < gallery_grid_Images.length; i++) {
                 //  This will create dynamic image view and add them to ViewFlipper
                 setFlipperImage(gallery_grid_Images[i]);
                 mviewflipper.setInAnimation(container.getContext(), R.anim.infrontleft);
             }
-            maboutus=(Button) rootView.findViewById(R.id.aboutus);
-            maboutus.setOnClickListener(new View.OnClickListener(){
+            maboutus = (Button) rootView.findViewById(R.id.aboutus);
+            maboutus.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v){
+                public void onClick(View v) {
                     displayaboutuspage();
                 }
 
             });
 
 
-            mwebviewtour=(Button) rootView.findViewById(R.id.starttour);
-            mwebviewtour.setOnClickListener(new View.OnClickListener(){
+            mwebviewtour = (Button) rootView.findViewById(R.id.starttour);
+            mwebviewtour.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v){
+                public void onClick(View v) {
                     displaywebviewtour();
                 }
 

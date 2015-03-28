@@ -15,6 +15,10 @@ import android.widget.ImageButton;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+/**
+ * @author Bernardo Martinez
+ * @version 0.1
+ */
 public class MainActivity extends ActionBarActivity {
 
 //Mainactivity updated 3/27/2015

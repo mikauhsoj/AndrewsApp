@@ -17,6 +17,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+/**
+ * @author Bernardo Martinez
+ * @version 0.1
+ */
 public class MapsActivity extends FragmentActivity {
 
     // private GoogleMap mMap; // Might be null if Google Play services APK is not available.

@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/map"
         class="edu.andrews.cptr475.bernardm.andrewsapp.CustomMapFragment"
-        android:layout_width="333dp"
+        android:layout_width="426dp"
         android:layout_height="match_parent"
         android:layout_weight="0.71"/>
 

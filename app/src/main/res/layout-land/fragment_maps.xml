@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:weightSum="1">
+    <!--
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/map"
+                  tools:context=".MapsActivity"
+                  android:name="com.google.android.gms.maps.SupportMapFragment"/>
+                  -->
+
+
+    <TextView
+        android:layout_width="208dp"
+        android:layout_height="57dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/largetextmed"
+        android:layout_gravity="right|top"/>
+
+    <TextView
+        android:layout_width="201dp"
+        android:layout_height="170dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/mainbodymapstxt"
+        android:layout_gravity="right|center_vertical"/>
+</FrameLayout>

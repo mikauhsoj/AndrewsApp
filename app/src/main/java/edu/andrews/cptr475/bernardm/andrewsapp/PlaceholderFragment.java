@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -13,6 +15,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.Map;
@@ -42,6 +45,36 @@ public class PlaceholderFragment extends Fragment {
                 //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.966215, -86.363742)).title("University_Towers"));
             }
         }
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if (marker.getTitle().equals("MeierHall")) {// if marker equals meier hall
+                    Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();
+                    TextView frv = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.largetextmed);
+                    TextView frv2 = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.mainbodymapstxt);
+
+                    frv.setText("Meier Hall MH");
+                    frv2.setText("During your stay at Meier Hall you'll be expected to adhere to guidelines that were designed to benefit you, " +
+                            "and to preserve and bolster our mission along with the message " +
+
+                            "and lifestyle of the Seventh-day Adventist church. Please regard them with mature and responsible attitudes.");
+                }
+                if (marker.getTitle().equals("University_Towers")) {// if marker equals meier hall\
+
+                    Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();
+                    TextView frv3 = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.largetextmed);
+                    TextView frv4 = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.mainbodymapstxt);
+
+                    frv3.setText("University Towers UT");
+                    frv4.setText("University Towers is comprised of Burman Hall, the Andrews University residence " +
+                            "hall for graduate aged men, constructed in 1981, and Damazo Hall, the Andrews University residence hall for graduate aged women, " +
+                            "constructed in 2011. Besides integrated common areas, " +
+                            "they also share a large lobby at the entrance to the facility. There students from both buildings may watch TV, study or visit.");
+                }
+                return false;
+            }
+        });
+
 
         mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
             @Override
@@ -111,7 +144,6 @@ public class PlaceholderFragment extends Fragment {
         super.onResume();
         setUpMapIfNeeded();
     }
-
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
     @Override

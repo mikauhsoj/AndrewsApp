@@ -12,7 +12,10 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.webkit.WebView;
 
-
+/**
+ * @author Bernardo Martinez
+ * @version 0.1
+ */
 public class WebviewToursActivity extends ActionBarActivity {
 
     @Override
@@ -54,6 +57,7 @@ public class WebviewToursActivity extends ActionBarActivity {
      */
     public static class PlaceholderFragment extends Fragment {
         private WebView mview;
+
         public PlaceholderFragment() {
         }
 
@@ -61,8 +65,8 @@ public class WebviewToursActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_webviewtours, container, false);
-            String url="https://www.andrews.edu/virtualtour/#/";
-            mview=(WebView) rootView.findViewById(R.id.webViewandrews);
+            String url = "https://www.andrews.edu/virtualtour/#/";
+            mview = (WebView) rootView.findViewById(R.id.webViewandrews);
             mview.getSettings().setJavaScriptEnabled(true);
             mview.loadUrl(url);
             return rootView;
