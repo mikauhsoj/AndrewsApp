@@ -6,7 +6,10 @@
 
     <ListView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/listMainView"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:fastScrollEnabled="true"
+        android:fastScrollStyle="@color/material_blue_grey_800"
+        android:fastScrollAlwaysVisible="true" />
 </LinearLayout>

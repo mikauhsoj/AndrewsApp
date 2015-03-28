@@ -1,15 +1,16 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
 import android.app.Activity;
+import android.support.v4.Fragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.List;
 
-import edu.andrews.cptr475.bernardm.andrewsapp.ListListener;
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
@@ -19,7 +20,7 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
  * @author Shemaiah Telemaque
  * @version 0.1
  */
-public class CampusNews extends Activity {
+public class CampusNews extends Fragment {
     /**
      * @param local A reference to the local object
      */

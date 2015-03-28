@@ -1,7 +1,6 @@
 package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -12,8 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
 
 /**
  * @author Bernardo Martinez
