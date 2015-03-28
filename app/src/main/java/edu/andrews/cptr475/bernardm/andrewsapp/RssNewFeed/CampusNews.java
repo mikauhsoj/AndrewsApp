@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.List;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.ListListener;
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
  * Main application activity.

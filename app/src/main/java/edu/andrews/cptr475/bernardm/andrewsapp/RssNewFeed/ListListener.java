@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.List;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RssItem;
 
 /**
  * @author Shemaiah Telemaque

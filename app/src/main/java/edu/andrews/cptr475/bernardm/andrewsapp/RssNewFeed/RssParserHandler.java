@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
