@@ -59,6 +59,10 @@
             android:name=".RssNewFeed.CampusNews"
             android:label="@string/app_name">
         </activity>
+        <activity android:name=".CalendaRSS.Calendar"
+            android:label="Calendar">
+
+            </activity>
     </application>
 
 </manifest>

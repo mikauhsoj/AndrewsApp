@@ -18,11 +18,11 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
  * @author Shemaiah Telemaque
  * @version 0.1
  */
-public class CampusNews extends Activity {
+public class CampusClassifieds extends Activity {
     /**
      * @param local A reference to the local object
      */
-    private CampusNews local;
+    private CampusClassifieds local;
 
     /**
      * This method creates main application view
@@ -33,7 +33,7 @@ public class CampusNews extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set view
-        setContentView(R.layout.fragment_news);
+        setContentView(R.layout.fragment_classified);
 
         // Set reference to this activity
         local = this;
@@ -41,7 +41,7 @@ public class CampusNews extends Activity {
         GetRSSDataTask task = new GetRSSDataTask();
 
         // Start download RSS task
-        task.execute("https://www.andrews.edu/agenda/category/Campus+News/rss");
+        task.execute("https://www.andrews.edu/agenda/category/Classifieds/rss");
 
         // Debug the thread name
         Log.d("CampusNews", Thread.currentThread().getName());

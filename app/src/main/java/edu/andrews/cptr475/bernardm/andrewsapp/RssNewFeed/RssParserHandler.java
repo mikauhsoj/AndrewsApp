@@ -1,5 +1,7 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
+import android.text.Html;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -7,6 +9,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 /**
  * SAX tag handler
  *
@@ -14,7 +17,7 @@ import java.util.List;
  * @version 0.1
  */
 public class RssParserHandler extends DefaultHandler {
-    StringBuilder builder;
+   // StringBuilder builder;
     /**
      * Arrays
      *
@@ -47,6 +50,8 @@ public class RssParserHandler extends DefaultHandler {
 
     public List<RssItem> getItems() {
         Collections.reverse(rssItems);
+        //Html.fromHtml(rssItems);
+        Html.fromHtml(String.valueOf(Html.fromHtml(String.valueOf(rssItems))));
         return rssItems;
     }
 
@@ -60,7 +65,7 @@ public class RssParserHandler extends DefaultHandler {
             parsingLink = true;
         } else if ("description".equals(qName)){
             parsingDescription = true;
-        } else if ("pubdate".equals(qName)){
+        } else if ("pubDate".equals(qName)){
             parsingPubdate = true;
         }
     }
@@ -76,7 +81,7 @@ public class RssParserHandler extends DefaultHandler {
             parsingLink = false;
         } else if ("description".equals(qName)){
             parsingDescription = false;
-        } else if ("pubdate".equals(qName)){
+        } else if ("pubDate".equals(qName)){
             parsingPubdate = false;
         }
     }
