@@ -1,6 +1,7 @@
 package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
@@ -71,6 +73,7 @@ public class MainActivity extends ActionBarActivity {
         private ImageButton mgooglemaps;
         private ImageButton mselfguidedtour;
         private ImageButton mnewsrss;
+        private ImageButton mcalendar;
 
         public PlaceholderFragment() {
         }
@@ -98,6 +101,13 @@ public class MainActivity extends ActionBarActivity {
             Intent i = new Intent(getActivity(), CampusNews.class);
             getActivity().startActivity(i);
         }
+
+        private void displayrcalendar() {
+
+            Intent i = new Intent(getActivity(), Calendar.class);
+            getActivity().startActivity(i);
+        }
+
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -127,6 +137,13 @@ public class MainActivity extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     displayrssnews();
+                }
+            });
+            mcalendar = (ImageButton) rootView.findViewById(R.id.calendar);
+            mcalendar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displayrcalendar();
                 }
             });
 
