@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.Map;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +16,9 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.PlaceholderFragment;
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
  * @author Bernardo Martinez

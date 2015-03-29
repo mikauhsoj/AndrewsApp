@@ -16,10 +16,10 @@
         android:layout_alignParentBottom="true">
 
         <ViewFlipper
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/FotosFlipper"
-            android:layout_gravity="center_horizontal|top"
+            android:layout_gravity="center|left|top"
             android:autoStart="true"
             android:animateFirstView="true"
             android:transitionName="@string/abc_activity_chooser_view_see_all"/>
@@ -28,7 +28,7 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_gravity="left|bottom"
+            android:layout_gravity="center_horizontal|bottom"
             android:gravity="bottom">
 
             <Button
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:text="Guided Tours"
                 android:id="@+id/button3"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="center_horizontal|bottom|left"/>
         </LinearLayout>
 
     </FrameLayout>
