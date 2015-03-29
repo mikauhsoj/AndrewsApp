@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
+package edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -7,6 +7,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 /**
  * SAX tag handler
  *
@@ -14,7 +15,6 @@ import java.util.List;
  * @version 0.1
  */
 public class RssParserHandler extends DefaultHandler {
-    StringBuilder builder;
     /**
      * Arrays
      *
@@ -58,10 +58,6 @@ public class RssParserHandler extends DefaultHandler {
             parsingTitle = true;
         } else if ("link".equals(qName)) {
             parsingLink = true;
-        } else if ("description".equals(qName)){
-            parsingDescription = true;
-        } else if ("pubdate".equals(qName)){
-            parsingPubdate = true;
         }
     }
 
@@ -74,10 +70,6 @@ public class RssParserHandler extends DefaultHandler {
             parsingTitle = false;
         } else if ("link".equals(qName)) {
             parsingLink = false;
-        } else if ("description".equals(qName)){
-            parsingDescription = false;
-        } else if ("pubdate".equals(qName)){
-            parsingPubdate = false;
         }
     }
 

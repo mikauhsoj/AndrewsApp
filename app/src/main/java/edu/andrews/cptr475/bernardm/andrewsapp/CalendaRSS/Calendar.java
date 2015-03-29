@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
+package edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -18,11 +18,11 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
  * @author Shemaiah Telemaque
  * @version 0.1
  */
-public class CampusNews extends Activity {
+public class Calendar extends Activity {
     /**
      * @param local A reference to the local object
      */
-    private CampusNews local;
+    private Calendar local;
 
     /**
      * This method creates main application view
@@ -33,7 +33,7 @@ public class CampusNews extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set view
-        setContentView(R.layout.fragment_news);
+        setContentView(R.layout.fragment_calendar);
 
         // Set reference to this activity
         local = this;
@@ -41,11 +41,10 @@ public class CampusNews extends Activity {
         GetRSSDataTask task = new GetRSSDataTask();
 
         // Start download RSS task
-        task.execute("https://www.andrews.edu/agenda/category/Campus+News/rss");
+        task.execute("http://www.andrews.edu/events/rss");
 
         // Debug the thread name
-        Log.d("CampusNews", Thread.currentThread().getName());
-        Log.d("CampusNews2",Thread.currentThread().toString());
+        Log.d("Calendar", Thread.currentThread().getName());
     }
 
     private class GetRSSDataTask extends AsyncTask<String, Void, List<RssItem>> {
@@ -53,8 +52,7 @@ public class CampusNews extends Activity {
         protected List<RssItem> doInBackground(String... urls) {
 
             // Debug the task thread name
-            Log.d("CampusNews", Thread.currentThread().getName());
-            Log.d("CampusNews2",Thread.currentThread().toString());
+            Log.d("Calendar", Thread.currentThread().getName());
 
             try {
                 // Create RSS reader
@@ -64,8 +62,7 @@ public class CampusNews extends Activity {
                 return rssReader.getItems();
 
             } catch (Exception e) {
-                Log.e("CampusNews", e.getMessage());
-                Log.e("CampusNews2", e.getLocalizedMessage());
+                Log.e("Calendar", e.getMessage());
             }
 
             return null;
@@ -75,10 +72,10 @@ public class CampusNews extends Activity {
         protected void onPostExecute(List<RssItem> result) {
 
             // Get a ListView from main view
-            ListView AUAitems = (ListView) findViewById(R.id.listMainView);
+            ListView AUAitems = (ListView) findViewById(R.id.calendarView);
 
             // Create a list adapter
-            ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.simple_list_item_activated_1, result);
+            ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.simple_list_item_2, result);
             // Set list adapter for the ListView
             AUAitems.setAdapter(adapter);
 

@@ -96,6 +96,15 @@
             android:layout_weight="1"
             android:text="Libraries"/>
 
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/calendar"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/calendar_icon"
+            android:layout_weight="1"
+            android:text="Calendar"/>
+
 
     </LinearLayout>
 
