@@ -33,7 +33,7 @@ public class CampusNews extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set view
-        setContentView(R.layout.activity_rss);
+        setContentView(R.layout.fragment_news);
 
         // Set reference to this activity
         local = this;
@@ -45,6 +45,7 @@ public class CampusNews extends Activity {
 
         // Debug the thread name
         Log.d("CampusNews", Thread.currentThread().getName());
+        Log.d("CampusNews2",Thread.currentThread().toString());
     }
 
     private class GetRSSDataTask extends AsyncTask<String, Void, List<RssItem>> {
@@ -53,6 +54,7 @@ public class CampusNews extends Activity {
 
             // Debug the task thread name
             Log.d("CampusNews", Thread.currentThread().getName());
+            Log.d("CampusNews2",Thread.currentThread().toString());
 
             try {
                 // Create RSS reader
@@ -63,6 +65,7 @@ public class CampusNews extends Activity {
 
             } catch (Exception e) {
                 Log.e("CampusNews", e.getMessage());
+                Log.e("CampusNews2", e.getLocalizedMessage());
             }
 
             return null;
@@ -75,7 +78,7 @@ public class CampusNews extends Activity {
             ListView AUAitems = (ListView) findViewById(R.id.listMainView);
 
             // Create a list adapter
-            ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.simple_list_item_1, result);
+            ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.simple_list_item_activated_1, result);
             // Set list adapter for the ListView
             AUAitems.setAdapter(adapter);
 
