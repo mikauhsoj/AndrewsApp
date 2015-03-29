@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.Map;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,6 +19,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.Map;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
  * This is part of the maps class and is a work on progress.

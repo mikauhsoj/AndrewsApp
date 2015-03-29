@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/map"
-        class="edu.andrews.cptr475.bernardm.andrewsapp.CustomMapFragment"
+        class="edu.andrews.cptr475.bernardm.andrewsapp.Map.CustomMapFragment"
         android:layout_width="match_parent"
         android:layout_height="438dp"
         android:layout_weight="0.71"/>

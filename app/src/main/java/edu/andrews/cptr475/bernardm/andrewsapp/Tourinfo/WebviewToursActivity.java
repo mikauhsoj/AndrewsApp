@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -10,17 +10,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.webkit.WebView;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
  * @author Bernardo Martinez
  * @version 0.1
  */
-public class AboutUs extends ActionBarActivity {
+public class WebviewToursActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aboutus);
+        setContentView(R.layout.activity_webviewtours);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -32,7 +35,7 @@ public class AboutUs extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_aboutus, menu);
+        getMenuInflater().inflate(R.menu.menu_webviewtours, menu);
         return true;
     }
 
@@ -55,6 +58,7 @@ public class AboutUs extends ActionBarActivity {
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
+        private WebView mview;
 
         public PlaceholderFragment() {
         }
@@ -62,9 +66,11 @@ public class AboutUs extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-
-            //creates the root view
-            View rootView = inflater.inflate(R.layout.fragment_aboutus, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_webviewtours, container, false);
+            String url = "https://www.andrews.edu/virtualtour/#/";
+            mview = (WebView) rootView.findViewById(R.id.webViewandrews);
+            mview.getSettings().setJavaScriptEnabled(true);
+            mview.loadUrl(url);
             return rootView;
         }
     }

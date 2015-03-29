@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
+import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
 
 /**
  * @author Bernardo Martinez
@@ -35,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-      //  View v = inflater.inflate(R.layout.fragment_main);
+        //  View v = inflater.inflate(R.layout.fragment_main);
 
     }
 
@@ -70,22 +71,25 @@ public class MainActivity extends ActionBarActivity {
         private ImageButton mgooglemaps;
         private ImageButton mselfguidedtour;
         private ImageButton mnewsrss;
+
         public PlaceholderFragment() {
         }
 
 
-        /**	Launch	activity	to	display	author	fact	*/
-        private	void	 displaygooglemap()	{
+        /**
+         * Launch	activity	to	display	author	fact
+         */
+        private void displaygooglemap() {
             //	Create	intent	with	name	of	class	for	second	activity.
             //	This	intent	will	be	sent	to	the	Activity	Manager	in	the	OS
             //	which	will	launch	the	activity.
-             Intent i	=	new	Intent(getActivity(),	MapsActivity.class);
+            Intent i = new Intent(getActivity(), MapsActivity.class);
             getActivity().startActivity(i);
         }
 
-        private void displayselftourguide(){
+        private void displayselftourguide() {
 
-            Intent i = new Intent(getActivity(),SelfTourGuide.class);
+            Intent i = new Intent(getActivity(), SelfTourGuide.class);
             getActivity().startActivity(i);
         }
 
@@ -94,24 +98,25 @@ public class MainActivity extends ActionBarActivity {
             Intent i = new Intent(getActivity(), CampusNews.class);
             getActivity().startActivity(i);
         }
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-            mgooglemaps=(ImageButton)rootView.findViewById(R.id.imageButton);
-            mgooglemaps.setOnClickListener(new View.OnClickListener(){
+            mgooglemaps = (ImageButton) rootView.findViewById(R.id.imageButton);
+            mgooglemaps.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v){
-                     displaygooglemap();
+                public void onClick(View v) {
+                    displaygooglemap();
                 }
 
             });
-            mselfguidedtour=(ImageButton)rootView.findViewById(R.id.selftourguide);
-            mselfguidedtour.setOnClickListener(new View.OnClickListener(){
+            mselfguidedtour = (ImageButton) rootView.findViewById(R.id.selftourguide);
+            mselfguidedtour.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v){
+                public void onClick(View v) {
                     displayselftourguide();
                 }
 

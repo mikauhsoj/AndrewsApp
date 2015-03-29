@@ -40,19 +40,19 @@
             android:label="@string/title_activity_maps">
         </activity>
         <activity
-            android:name=".SelfTourGuide"
+            android:name=".Tourinfo.SelfTourGuide"
             android:label="@string/title_activity_selftour_guide">
         </activity>
         <activity
-            android:name=".AboutUs"
+            android:name=".Tourinfo.AboutUs"
             android:label="@string/title_activity_aboutus">
         </activity>
         <activity
-            android:name=".WebviewToursActivity"
+            android:name=".Tourinfo.WebviewToursActivity"
             android:label="@string/title_activity_webviewtours">
         </activity>
         <activity
-            android:name=".DirectoryActivity"
+            android:name=".Directory.DirectoryActivity"
             android:label="@string/title_activity_directory">
         </activity>
         <activity

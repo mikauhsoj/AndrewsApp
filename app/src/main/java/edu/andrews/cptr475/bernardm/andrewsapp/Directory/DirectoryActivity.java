@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.Directory;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 
 public class DirectoryActivity extends ActionBarActivity {

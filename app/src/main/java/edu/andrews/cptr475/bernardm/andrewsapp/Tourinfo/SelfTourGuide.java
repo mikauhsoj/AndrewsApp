@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp;
+package edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
  * @author Bernardo Martinez
