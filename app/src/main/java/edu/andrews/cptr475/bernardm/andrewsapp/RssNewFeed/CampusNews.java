@@ -18,6 +18,12 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
  * @author Shemaiah Telemaque
  * @version 0.1
  */
+
+/**
+ * TODO: remove the hltm tags from the xml file
+ * TODO 2 findout how fix the bug with broken links
+ *
+ */
 public class CampusNews extends Activity {
     /**
      * @param local A reference to the local object
@@ -79,7 +85,7 @@ public class CampusNews extends Activity {
             ListView AUAitems = (ListView) findViewById(R.id.listMainView);
 
             // Create a list adapter
-            ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.simple_list_item_activated_1, result);
+            ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.simple_dropdown_item_1line, result);
             // Set list adapter for the ListView
             AUAitems.setAdapter(adapter);
 

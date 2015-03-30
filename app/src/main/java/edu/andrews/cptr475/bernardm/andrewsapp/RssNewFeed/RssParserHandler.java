@@ -1,7 +1,5 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
-import android.text.Html;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -45,13 +43,13 @@ public class RssParserHandler extends DefaultHandler {
     private boolean parsingDescription;
 
     public RssParserHandler() {
-        rssItems = new ArrayList<RssItem>();
+        rssItems = new ArrayList<>();
     }
 
     public List<RssItem> getItems() {
         Collections.reverse(rssItems);
         //Html.fromHtml(rssItems);
-        Html.fromHtml(String.valueOf(Html.fromHtml(String.valueOf(rssItems))));
+       //Html.;
         return rssItems;
     }
 
