@@ -52,7 +52,7 @@
             android:label="@string/title_activity_webviewtours">
         </activity>
         <activity
-            android:name=".Directory.DirectoryActivity"
+            android:name=".Directory.DirectoryListActivity"
             android:label="@string/title_activity_directory">
         </activity>
         <activity
