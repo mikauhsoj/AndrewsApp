@@ -90,11 +90,11 @@
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/library"
+            android:id="@+id/directory"
             android:background="@android:color/transparent"
-            android:src="@drawable/library_icon"
+            android:src="@drawable/directory_icon"
             android:layout_weight="1"
-            android:text="Libraries"/>
+            android:text="Directory"/>
 
         <ImageButton
             android:layout_width="0dp"

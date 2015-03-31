@@ -10,7 +10,7 @@
     <string name="title_activity_selftour_guide">SelftourGuide</string>
     <string name="title_activity_aboutus">Aboutus</string>
     <string name="title_activity_webviewtours">Webviewtours</string>
-    <string name="title_activity_directory">DirectoryActivity</string>
+    <string name="title_activity_directory">DirectoryListActivity</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="mapText">Map</string>
