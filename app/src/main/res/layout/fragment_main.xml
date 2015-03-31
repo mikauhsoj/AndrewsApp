@@ -14,47 +14,48 @@
     <!-- Vertical layout is 4 icons across vs 5 in horizontal-->
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:layout_centerHorizontal="true"
         android:weightSum="4"
         android:id="@+id/linearLayout"
         android:paddingTop="16dp">
 
-        <ImageButton
+        <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
-            android:background="@android:color/transparent"
-            android:src="@drawable/maps_rose_icon"
+            android:layout_height="fill_parent"
+            android:id="@+id/maps_button"
+            android:background="@null"
+            android:drawableTop="@drawable/maps_rose_icon"
             android:layout_weight="1"
             android:text="Map" />
 
 
-        <ImageButton
+        <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:id="@+id/selftourguide"
-            android:src="@drawable/tour_icon"
+            android:layout_height="fill_parent"
+            android:background="@null"
+            android:id="@+id/tour_button"
+            android:drawableTop="@drawable/tour_icon"
             android:layout_weight="1"
             android:text="Tour"/>
 
 
-         <ImageButton
+         <Button
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:id="@+id/imageButton2"
-            android:background="@android:color/transparent"
-            android:src="@drawable/shuttle_icon"
+            android:layout_height="fill_parent"
+            android:id="@+id/shuttle_button"
+            android:background="@null"
+            android:drawableTop="@drawable/shuttle_icon"
             android:layout_weight="1"
-            android:text="Shuttle"/>
+            android:text="Shuttle"
+             />
 
-         <ImageButton
+         <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton3"
-            android:background="@android:color/transparent"
-            android:src="@drawable/weather_icon"
+            android:layout_height="fill_parent"
+            android:id="@+id/weather_button"
+            android:background="@null"
+            android:drawableTop="@drawable/weather_icon"
             android:layout_weight="1"
             android:text="Weather"/>
 
@@ -62,46 +63,46 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
         android:weightSum="4"
         android:id="@+id/linearLayout2"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:paddingTop="16dp">
 
-        <ImageButton
+        <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/news"
-            android:background="@android:color/transparent"
-            android:src="@drawable/news_icon"
+            android:layout_height="fill_parent"
+            android:id="@+id/news_button"
+            android:background="@null"
+            android:drawableTop="@drawable/news_icon"
             android:layout_weight="1"
             android:text="News"/>
 
-        <ImageButton
+        <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/food"
-            android:background="@android:color/transparent"
-            android:src="@drawable/food_icon"
+            android:layout_height="fill_parent"
+            android:id="@+id/food_button"
+            android:background="@null"
+            android:drawableTop="@drawable/food_icon"
             android:layout_weight="1"
             android:text="Dining"/>
 
-        <ImageButton
+        <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/directory"
-            android:background="@android:color/transparent"
-            android:src="@drawable/directory_icon"
+            android:layout_height="fill_parent"
+            android:id="@+id/library_button"
+            android:background="@null"
+            android:drawableTop="@drawable/library_icon"
             android:layout_weight="1"
-            android:text="Directory"/>
+            android:text="Libraries"/>
 
-        <ImageButton
+        <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/calendar"
-            android:background="@android:color/transparent"
-            android:src="@mipmap/calendar_icon"
+            android:layout_height="fill_parent"
+            android:id="@+id/calendar_button"
+            android:background="@null"
+            android:drawableTop="@mipmap/calendar_icon"
             android:layout_weight="1"
             android:text="Calendar"/>
 
