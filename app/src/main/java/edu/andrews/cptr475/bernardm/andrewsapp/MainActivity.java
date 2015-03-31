@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
+import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
@@ -74,6 +75,7 @@ public class MainActivity extends ActionBarActivity {
         private ImageButton mselfguidedtour;
         private ImageButton mnewsrss;
         private ImageButton mcalendar;
+        private ImageButton mdirectory;
 
         public PlaceholderFragment() {
         }
@@ -108,6 +110,10 @@ public class MainActivity extends ActionBarActivity {
             getActivity().startActivity(i);
         }
 
+        private void displaydirectory() {
+            Intent i = new Intent(getActivity(), DirectoryListActivity.class);
+            getActivity().startActivity(i);
+        }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -146,6 +152,15 @@ public class MainActivity extends ActionBarActivity {
                     displayrcalendar();
                 }
             });
+
+            mdirectory = (ImageButton) rootView.findViewById(R.id.directory);
+            mdirectory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displaydirectory();
+                }
+            });
+
 
 
             ///code to create a banner for comments
