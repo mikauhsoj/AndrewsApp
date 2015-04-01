@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -77,10 +80,13 @@ public class DirectoryListActivity extends ActionBarActivity {
         TextView fname;
         TextView lname;
         Button getDirectory;
+        EditText searchDirectory;
+
+
 
         ArrayList<HashMap<String, String>> mDirectory = new ArrayList<HashMap<String, String>>();
 
-        private String url ="http://www.andrews.edu/directory/joshua/json";
+        private String url;
         private static final String TAG_FNAME = "fname";
         private static final String TAG_LNAME = "lname";
         private static final String TAG_USERNAME = "username";
@@ -97,10 +103,14 @@ public class DirectoryListActivity extends ActionBarActivity {
             getActivity().setContentView(R.layout.fragment_directory_list);
             mDirectory = new ArrayList<HashMap<String, String>>();
 
-            getDirectory = (Button)getActivity().findViewById(R.id.getDataButton);
+            searchDirectory = (EditText)getActivity().findViewById(R.id.searchEditText);
+            searchDirectory.setHint("Enter name");
+
+            getDirectory = (Button)getActivity().findViewById(R.id.searchButton);
             getDirectory.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
+                    url = "http://www.andrews.edu/directory/" + searchDirectory.getText().toString() + "/json";
                     new JSONParse().execute();
                 }
             });
@@ -152,7 +162,9 @@ public class DirectoryListActivity extends ActionBarActivity {
                         list=(ListView)getActivity().findViewById(R.id.directoryListView);
                         ListAdapter adapter = new SimpleAdapter(getActivity(), mDirectory,
                                 R.layout.directory_item, new String[] { TAG_FNAME,TAG_LNAME }, new int[] {R.id.fnameTextView,R.id.lnameTextView});
-                        list.setAdapter(adapter);
+                        //if (adapter == null){
+                            list.setAdapter(adapter);
+                        //}
                         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view,
