@@ -2,6 +2,7 @@ package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
 import android.media.Image;
+import android.provider.ContactsContract;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Button;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
 import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
@@ -71,11 +73,11 @@ public class MainActivity extends ActionBarActivity {
      */
     public static class PlaceholderFragment extends Fragment {
 
-        private ImageButton mgooglemaps;
-        private ImageButton mselfguidedtour;
-        private ImageButton mnewsrss;
-        private ImageButton mcalendar;
-        private ImageButton mdirectory;
+        private Button mgooglemaps;
+        private Button mselfguidedtour;
+        private Button mnewsrss;
+        private Button mcalendar;
+        private Button mdirectory;
 
         public PlaceholderFragment() {
         }
@@ -121,7 +123,7 @@ public class MainActivity extends ActionBarActivity {
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-            mgooglemaps = (ImageButton) rootView.findViewById(R.id.imageButton);
+            mgooglemaps = (Button) rootView.findViewById(R.id.maps_button);
             mgooglemaps.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -129,7 +131,8 @@ public class MainActivity extends ActionBarActivity {
                 }
 
             });
-            mselfguidedtour = (ImageButton) rootView.findViewById(R.id.selftourguide);
+
+            mselfguidedtour = (Button) rootView.findViewById(R.id.tour_button);
             mselfguidedtour.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -138,14 +141,15 @@ public class MainActivity extends ActionBarActivity {
 
             });
 
-            mnewsrss = (ImageButton) rootView.findViewById(R.id.news);
+            mnewsrss = (Button) rootView.findViewById(R.id.news_button);
             mnewsrss.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     displayrssnews();
                 }
             });
-            mcalendar = (ImageButton) rootView.findViewById(R.id.calendar);
+
+            mcalendar = (Button) rootView.findViewById(R.id.calendar_button);
             mcalendar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -153,15 +157,13 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
-            mdirectory = (ImageButton) rootView.findViewById(R.id.directory);
+            mdirectory = (Button) rootView.findViewById(R.id.directory_button);
             mdirectory.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     displaydirectory();
                 }
             });
-
-
 
             ///code to create a banner for comments
            /* AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
