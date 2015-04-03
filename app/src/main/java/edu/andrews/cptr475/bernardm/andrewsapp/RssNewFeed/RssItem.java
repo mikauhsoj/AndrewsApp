@@ -56,7 +56,8 @@ public class RssItem {
 
     @Override
     public String toString() {
-        return title;
+        return description;
     }
+
 
 }
