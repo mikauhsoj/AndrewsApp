@@ -215,7 +215,7 @@ class AndrewsBuildingsDialogFragment extends DialogFragment {
 
 
         // String Building="MeierHall";
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
@@ -255,6 +255,10 @@ class AndrewsBuildingsDialogFragment extends DialogFragment {
                         // sign in the user ...
                         Intent i = new Intent(getActivity(), AboutUs.class);
                         getActivity().startActivity(i);
+                        //    LayoutInflater inflater = getActivity().getLayoutInflater();
+                        //   View textview2 = inflater.inflate(R.layout.buildingdetailinfo, null);
+
+                        // builder.setView(textview2);
                         //fragment transitions check...
                 /*    getFragmentManager()
                             .beginTransaction().add(data,)
