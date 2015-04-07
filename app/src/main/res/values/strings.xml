@@ -18,7 +18,7 @@
     <string name="MeierHall">MeirHall</string>
     <!-- Weather Strings -->
     <!--<string name="app_name">Andrews Weather</string>-->
-    <string name="change_city">Berrien Springsy</string>
+    <string name="change_city">Change City</string>
 
     <!-- Put your own APP ID here -->
     <string name="open_weather_maps_app_id">f9bd68a937e69cf550d60a113951481d</string>
