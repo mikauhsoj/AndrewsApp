@@ -16,7 +16,7 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
  */
 public class RemoteFetch {
     private static final String OPEN_WEATHER_MAP_API =
-            "http://api.openweathermap.org/data/2.5/weather?q=Berrien_Springs,US";
+            "http://api.openweathermap.org/data/2.5/weather?q=Berrien_Springs,us&units=imperial";
 
     public static JSONObject getJSON(Context context, String city){
         try {
