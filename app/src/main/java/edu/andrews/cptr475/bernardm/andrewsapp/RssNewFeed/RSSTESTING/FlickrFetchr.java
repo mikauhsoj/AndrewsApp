@@ -1,5 +1,12 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RSSTESTING;
 
+import android.net.Uri;
+import android.util.Log;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,13 +14,6 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import android.net.Uri;
-import android.util.Log;
 
 public class FlickrFetchr {
     /** Log message tag */

@@ -1,7 +1,5 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RSSTESTING;
 
-import java.util.ArrayList;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import java.util.ArrayList;
 
 public class PhotoGalleryFragment extends Fragment {
     GridView mGridView;
