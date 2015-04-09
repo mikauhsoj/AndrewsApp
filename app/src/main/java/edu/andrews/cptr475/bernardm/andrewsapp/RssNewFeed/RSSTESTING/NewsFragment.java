@@ -7,19 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
-public class PhotoGalleryFragment extends Fragment {
-    GridView mGridView;
-    ArrayList<GalleryItem> mItems;
+public class NewsFragment extends Fragment {
+    ListView mListView;
+    //GridView mGridView;
+    ArrayList<NewsItem> mItems;
     /** Create an image view containing  the photo for each photo in the gallery */
-    private class GalleryItemAdapter extends ArrayAdapter<GalleryItem> {
-        public GalleryItemAdapter(ArrayList<GalleryItem> items) {
+    private class GalleryItemAdapter extends ArrayAdapter<NewsItem> {
+        public GalleryItemAdapter(ArrayList<NewsItem> items) {
             super(getActivity(), 0, items);
         }
 
@@ -40,13 +41,13 @@ public class PhotoGalleryFragment extends Fragment {
         }
     }
     /** Asynchronous task responsible for downloading items from flickr */
-    private class FetchItemsTask extends AsyncTask<Void, Void, ArrayList<GalleryItem>> {
+    private class FetchItemsTask extends AsyncTask<Void, Void, ArrayList<NewsItem>> {
         @Override
-        protected ArrayList<GalleryItem> doInBackground(Void... params){
-            return new FlickrFetchr().fetchItems();
+        protected ArrayList<NewsItem> doInBackground(Void... params){
+            return new NewsFetchr().fetchItems();
         }
         @Override
-        protected void onPostExecute(ArrayList<GalleryItem> items){
+        protected void onPostExecute(ArrayList<NewsItem> items){
             mItems = items;
             setupAdapter();
         }
@@ -64,22 +65,22 @@ public class PhotoGalleryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_photo_gallery, container, false);
+        View v = inflater.inflate(R.layout.fragment_news_test, container, false);
         
-        mGridView = (GridView)v.findViewById(R.id.gridView);
+        mListView = (ListView)v.findViewById(R.id.listView);
         setupAdapter();
         
         return v;
     }
     
     void setupAdapter() {
-        if (getActivity() == null || mGridView == null) return;
+        if (getActivity() == null || mListView == null) return;
         
         if (mItems != null) {
             //There are gallery items, user our own Adapter to generate the views.
-            mGridView.setAdapter(new GalleryItemAdapter(mItems));
+            mListView.setAdapter(new GalleryItemAdapter(mItems));
         } else {
-            mGridView.setAdapter(null);
+            mListView.setAdapter(null);
         }
     }
 
