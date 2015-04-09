@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/city_field"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -21,7 +21,8 @@
         android:contentDescription="Displays name of city"
         android:textColor="@color/au_gold_alt"
         android:textAlignment="center"
-        android:singleLine="true" />
+        android:singleLine="true"
+         />
 
     <TextView
         android:id="@+id/updated_field"
