@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
+import edu.andrews.cptr475.bernardm.andrewsapp.Dining.DiningActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
@@ -87,6 +88,7 @@ public class MainActivity extends ActionBarActivity {
         private Button mcalendar;
         private Button mdirectory;
         private Button mweather;
+        private Button mdining;
 
         public PlaceholderFragment() {
         }
@@ -127,6 +129,11 @@ public class MainActivity extends ActionBarActivity {
         }
         private void displayweather(){
             Intent i = new Intent(getActivity(), WeatherActivity.class);
+            getActivity().startActivity(i);
+        }
+
+        private void displaydining(){
+            Intent i = new Intent(getActivity(), DiningActivity.class);
             getActivity().startActivity(i);
         }
 
@@ -183,6 +190,14 @@ public class MainActivity extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     displayweather();
+                }
+            });
+
+            mdining= (Button) rootView.findViewById(R.id.food_button);
+            mdining.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displaydining();
                 }
             });
 
