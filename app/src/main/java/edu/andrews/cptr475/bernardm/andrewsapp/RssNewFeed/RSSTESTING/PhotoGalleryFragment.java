@@ -12,6 +12,8 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
+
 public class PhotoGalleryFragment extends Fragment {
     GridView mGridView;
     ArrayList<GalleryItem> mItems;
