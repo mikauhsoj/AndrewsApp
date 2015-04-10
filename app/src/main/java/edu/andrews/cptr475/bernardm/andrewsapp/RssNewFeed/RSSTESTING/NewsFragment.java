@@ -69,7 +69,8 @@ public class NewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_news_test, container, false);
-        
+        mListView.setSelection(1);
+        //System.out.print(mListView.setSelection(1));
         mListView = (ListView)v.findViewById(listMainView);
         setupAdapter();
         

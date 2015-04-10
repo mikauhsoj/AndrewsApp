@@ -1,10 +1,13 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RSSTESTING;
 
+import java.text.MessageFormat;
+
 /** Model information about an image in a photo gallery */
 public class  NewsItem {
     private String mTitle;
     private String mDescription;
     private String mLink;
+    private String mpubDate;
 
     public String getTitle() {
         return mTitle;
@@ -24,11 +27,20 @@ public class  NewsItem {
         return mLink;
     }
 
-    public void setPubDate(String link) {
+    public void setLink(String link) {
         mLink = link;
     }
 
+    public String getPubDate() {
+        return mpubDate;
+    }
+
+    public void setPubDate(String pubDate) {
+        mpubDate = pubDate;
+    }
+
     public String toString() {
-        return mTitle;
+        return MessageFormat.format("{0},{1},{2}", mTitle, mpubDate, mDescription);
+        //return mTitle+ ","+mpubDate+ ","+ mDescription ;
     }
 }

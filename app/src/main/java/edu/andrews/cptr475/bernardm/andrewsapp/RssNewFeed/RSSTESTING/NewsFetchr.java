@@ -19,7 +19,7 @@ import java.util.Collections;
 public class NewsFetchr {
     /** Log message tag */
     public static final String TAG = "NewsFetcher";
-    /** URL for flickr API */
+    /** URL for Andrews Agenda RSS feed */
     private static final String ENDPOINT = "https://www.andrews.edu/agenda/category/Campus+News/limit/15/rss";
     /** name of news tag in XML for the news story information */
     private static final String XML_ITEM = "item";
@@ -107,7 +107,7 @@ public class NewsFetchr {
             // read 1K of bytes from input stream until nothing left to read.
             // write each set of bytes to the output byte array
             int bytesRead = 0;
-            byte[] buffer = new byte[2048];
+            byte[] buffer = new byte[5000000];
             while ((bytesRead = in.read(buffer))> 0) {
                 out.write(buffer, 0, bytesRead);
             }

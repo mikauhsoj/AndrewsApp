@@ -65,8 +65,12 @@
             android:name=".Directory.DirectoryListActivity"
             android:label="@string/title_activity_directory" >
         </activity>
-        <activity
+        <!--Revert to RSSTESTING.NewsActivity -->
+        <!--<activity
             android:name=".RssNewFeed.RSSTESTING.NewsActivity"
+            android:label="@string/app_name" >-->
+        <activity
+            android:name=".RssNewFeed.CampusNews"
             android:label="@string/app_name" >
         </activity>
         <activity
