@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
+
+import static edu.andrews.cptr475.bernardm.andrewsapp.R.id.listMainView;
 
 public class NewsFragment extends Fragment {
     ListView mListView;
@@ -32,18 +34,19 @@ public class NewsFragment extends Fragment {
             if (convertView == null) {
                 //There is now existing view to recycle,
                 //Create a new one by inflating the gallery item layout
-                convertView = getActivity().getLayoutInflater().inflate(R.layout.gallery_item, parent, false);
+                convertView = getActivity().getLayoutInflater().inflate(R.layout.fragment_news_test, parent, false);
             }
             //Specify the image for the image view
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.gallery_items_imageView);
-            imageView.setImageResource(android.R.drawable.ic_menu_gallery);
+            TextView textView = (TextView) convertView.findViewById(listMainView);
+            textView.setText(getText(R.layout.fragment_news_test));
             return convertView;
         }
     }
-    /** Asynchronous task responsible for downloading items from flickr */
+    /** Asynchronous task responsible for downloading items from  Andrews Agenda */
     private class FetchItemsTask extends AsyncTask<Void, Void, ArrayList<NewsItem>> {
         @Override
         protected ArrayList<NewsItem> doInBackground(Void... params){
+            //Collections.reverse(mItems);
             return new NewsFetchr().fetchItems();
         }
         @Override
@@ -67,7 +70,7 @@ public class NewsFragment extends Fragment {
             Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_news_test, container, false);
         
-        mListView = (ListView)v.findViewById(R.id.listView);
+        mListView = (ListView)v.findViewById(listMainView);
         setupAdapter();
         
         return v;
@@ -77,7 +80,7 @@ public class NewsFragment extends Fragment {
         if (getActivity() == null || mListView == null) return;
         
         if (mItems != null) {
-            //There are gallery items, user our own Adapter to generate the views.
+            //There are news items, user our own Adapter to generate the views.
             mListView.setAdapter(new GalleryItemAdapter(mItems));
         } else {
             mListView.setAdapter(null);

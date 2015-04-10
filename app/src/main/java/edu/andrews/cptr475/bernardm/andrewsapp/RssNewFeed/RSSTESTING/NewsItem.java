@@ -1,7 +1,7 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RSSTESTING;
 
 /** Model information about an image in a photo gallery */
-public class NewsItem {
+public class  NewsItem {
     private String mTitle;
     private String mDescription;
     private String mLink;
@@ -24,7 +24,7 @@ public class NewsItem {
         return mLink;
     }
 
-    public void setUrl(String link) {
+    public void setPubDate(String link) {
         mLink = link;
     }
 

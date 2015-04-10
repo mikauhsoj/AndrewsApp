@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ListView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:id="@+id/listMainViewNews"
         android:layout_gravity="center_horizontal"
         android:fastScrollEnabled="false"
@@ -20,6 +20,7 @@
         android:drawSelectorOnTop="false"
         android:contentDescription="@string/hello_world"
         tools:listitem="@android:layout/simple_list_item_2"
-        tools:listfooter="@layout/pubdate" />
+        tools:listfooter="@layout/pubdate"
+        android:layout_weight="1" />
 
 </LinearLayout>
