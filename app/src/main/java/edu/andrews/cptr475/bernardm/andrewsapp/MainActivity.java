@@ -1,7 +1,6 @@
 package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -18,6 +17,7 @@ import edu.andrews.cptr475.bernardm.andrewsapp.Dining.DiningActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
+import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RSSTESTING.NewsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
 import edu.andrews.cptr475.bernardm.andrewsapp.Weather.WeatherActivity;
 
@@ -64,9 +64,9 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
+        /** Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // as you specify a parent activity in AndroidManifest.xml.*/
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -98,9 +98,9 @@ public class MainActivity extends ActionBarActivity {
          * Launch	activity	to	display	author	fact
          */
         private void displaygooglemap() {
-            //	Create	intent	with	name	of	class	for	second	activity.
-            //	This	intent	will	be	sent	to	the	Activity	Manager	in	the	OS
-            //	which	will	launch	the	activity.
+            /**	Create	intent	with	name	of	class	for	second	activity.
+            	This	intent	will	be	sent	to	the	Activity	Manager	in	the	OS
+            	which	will	launch	the	activity.*/
             Intent i = new Intent(getActivity(), MapsActivity.class);
             getActivity().startActivity(i);
         }
@@ -111,6 +111,13 @@ public class MainActivity extends ActionBarActivity {
             getActivity().startActivity(i);
         }
 
+        /**
+         * Implement when fix NewsActivity.
+         * private void displayrssnews() {
+
+            Intent i = new Intent(getActivity(), NewsActivity.class);
+            getActivity().startActivity(i);
+        }*/
         private void displayrssnews() {
 
             Intent i = new Intent(getActivity(), CampusNews.class);
@@ -201,8 +208,8 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
-            ///code to create a banner for comments
-           /* AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
+           /* code to create a banner for comments
+            AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);*/
 

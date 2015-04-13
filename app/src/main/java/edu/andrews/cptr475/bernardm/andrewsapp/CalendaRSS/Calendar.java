@@ -5,8 +5,11 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.List;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
  * Main application activity.
@@ -30,7 +33,7 @@ public class Calendar extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set view
-      //  setContentView(R.layout.fragment_calendar);
+        setContentView(R.layout.fragment_news);
 
         // Set reference to this activity
         local = this;
@@ -69,15 +72,15 @@ public class Calendar extends Activity {
         protected void onPostExecute(List<RssItem> result) {
 
             // Get a ListView from main view
-            //ListView AUAitems = (ListView) findViewById(R.id.calendarView);
+            ListView AUCitems = (ListView) findViewById(R.id.listView);
 
             // Create a list adapter
             ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.list_content, result);
             // Set list adapter for the ListView
-           // AUAitems.setAdapter(adapter);
+                AUCitems.setAdapter(adapter);
 
             // Set list view item click listener
-           // AUAitems.setOnItemClickListener(new ListListener(result, local));
+            AUCitems.setOnItemClickListener(new ListListener(result, local));
         }
     }
 }

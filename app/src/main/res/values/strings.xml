@@ -32,11 +32,13 @@
     <string name="weather_snowy">&#xf01b;</string>
     <string name="weather_thunder">&#xf01e;</string>
     <string name="weather_drizzle">&#xf01c;</string>
+    <string name="oauth_consumer_key">wLd3UjjtE_T3iLDu67gzhA</string>
+    <string name="oauth_consumer_secret">-Fy6l4iYL4zANmIwsvp8-qBvI20</string>
+    <string name="oauth_token">eYEBrIt92LkU35qOVzXGuM_G0pUE1EID</string>
+    <string name="oauth_token_secret">zhWrZx1onjlzuXvo6hmeDOIu6d0</string>
 
     <string name="place_not_found">Sorry, no weather data found.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_weather">WeatherActivity</string>
-    <string name="title_activity_dining">DiningActivity</string>
-    <string name="title_activity_local_dining">LocalDiningActivity</string>
 </resources>

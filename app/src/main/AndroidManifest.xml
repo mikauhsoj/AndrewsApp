@@ -65,6 +65,10 @@
             android:name=".Directory.DirectoryListActivity"
             android:label="@string/title_activity_directory" >
         </activity>
+        <!--Revert to RSSTESTING.NewsActivity -->
+        <!--<activity
+            android:name=".RssNewFeed.RSSTESTING.NewsActivity"
+            android:label="@string/app_name" >-->
         <activity
             android:name=".RssNewFeed.CampusNews"
             android:label="@string/app_name" >
@@ -79,11 +83,11 @@
         </activity>
         <activity
             android:name=".Dining.DiningActivity"
-            android:label="@string/title_activity_dining" >
+            android:label="title_activity_dining">
         </activity>
         <activity
             android:name=".Dining.LocalDiningActivity"
-            android:label="@string/title_activity_local_dining" >
+            android:label="title_activity_local_dining">
         </activity>
     </application>
 
