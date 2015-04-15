@@ -1,8 +1,8 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RSSTESTING;
 
+import android.app.ListFragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,7 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 import static edu.andrews.cptr475.bernardm.andrewsapp.R.id.listMainView;
 
-public class NewsFragment extends Fragment {
+public class NewsFragment extends ListFragment {
     ListView mListView;
     //GridView mGridView;
     ArrayList<NewsItem> mItems;
@@ -27,7 +27,7 @@ public class NewsFragment extends Fragment {
         }
 
         /**
-         * Setup the view for a gallery items at a given position in an array list
+         * Setup the view for a News items at a given position in an array list
          */
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -66,10 +66,9 @@ public class NewsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_news_test, container, false);
-        mListView.setSelection(1);
+//        mListView.setAdapter((android.widget.ListAdapter) mItems);
         //System.out.print(mListView.setSelection(1));
         mListView = (ListView)v.findViewById(listMainView);
         setupAdapter();

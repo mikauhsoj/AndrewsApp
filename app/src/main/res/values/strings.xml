@@ -13,7 +13,7 @@
     <string name="title_activity_directory">DirectoryListActivity</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="signin">Read More</string>
-    <string name="cancel">cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="mapText">Map</string>
     <string name="MeierHall">MeirHall</string>
     <!-- Weather Strings -->

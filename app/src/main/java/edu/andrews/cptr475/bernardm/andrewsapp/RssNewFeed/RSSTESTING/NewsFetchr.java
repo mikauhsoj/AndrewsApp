@@ -14,7 +14,6 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class NewsFetchr {
     /** Log message tag */
@@ -42,7 +41,7 @@ public class NewsFetchr {
 
             //parse the xml photo elements
             //and create gallery items for each one
-            parseItems(items, parser);
+            //parse(items);
         } catch (IOException ioe){
             Log.e(TAG, "Failed to fetch items", ioe);
         } catch (XmlPullParserException xppe){
@@ -52,38 +51,108 @@ public class NewsFetchr {
     }
     /**
      * Parse Photo elements in an XML string one-by-one
-     * @param items List of GalleryItems to add to.
+     * //@param items List of GalleryItems to add to.
      *              Each photo elements result in a new NewsItem
      *              that is added to the list
-     * @param parser XML parser object initialized with string to parse
+     * //@param parser XML parser object initialized with string to parse
      * @throws org.xmlpull.v1.XmlPullParserException
      * @throws java.io.IOException
      */
-    void parseItems(ArrayList<NewsItem> items, XmlPullParser parser) throws XmlPullParserException, IOException {
-        int eventType = parser.next();
-        // Keep parsing photo elements and converting them to Gallery items until we reach the end of the XML string.
-        while (eventType != XmlPullParser.END_DOCUMENT){
-                if (eventType == XmlPullParser.START_TAG && XML_ITEM.equals(parser.getName())){
-                //Extract image Id
-                String title = parser.getAttributeValue(null, "title");
-                //Extract image Title
-                String description = parser.getAttributeValue(null, "description");
-                //Extract url for image Thumbnail
-                String pubDate = parser.getAttributeValue(null, "pubDate");
+    /*public void parseItems(ArrayList<NewsItem>, XmlPullParser parser) throws XmlPullParserException, IOException{
+        XmlPullParserFactory factory = null;
+        //XmlPullParser parser = null;
+        try {
+            factory = XmlPullParserFactory.newInstance();
+            factory.setNamespaceAware(true);
+            parser = factory.newPullParser();
 
-                //Create new Gallery item for image
-                NewsItem item = new NewsItem();
-                item.setTitle(title);
-                item.setDescription(description);
-                item.setPubDate(pubDate);
-                items.add(item);
+            parser.setInput(XmlPullParser);
+            boolean check =false;
 
+            //factory instantiates an object
+
+            int eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+
+                switch (eventType) {
+                    case XmlPullParser.START_TAG:
+
+                        String tagname = parser.getName();
+                        Log.i("Tag names are ",tagname);
+
+                        if (tagname.equalsIgnoreCase("title")) {
+
+                            if(parser.getAttributeValue(null, "title").equals("264374"))
+                            {
+                                String title = parser.getAttributeValue(null, "title");
+                                Log.i(" Title ",title);
+                            }
+
+                        }
+                        if (tagname.equalsIgnoreCase("description")) {
+
+                            String description = parser.getAttributeValue(null, "description");
+                            //String lon= parser.getAttributeValue(null, "lon");
+                            Log.i("Description",description);
+
+                        }
+                        if (tagname.equalsIgnoreCase("pubdate")) {
+
+                            //String rise= parser.getAttributeValue(null, "rise");
+                            String pudate = parser.getAttributeValue(null, "pubdate");
+                            Log.i("Published Date", pudate);
+
+                        }
+
+                        break;
+
+                    case XmlPullParser.TEXT:
+                        break;
+
+                    case XmlPullParser.END_TAG:
+
+
+                        break;
+
+                    default:
+                        break;
+                }
+                eventType = parser.next();
             }
-            //move to next xml element in the file.
-            eventType = parser.next();
 
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    }
+
+        return null;
+    }*/
+//    void parseItems(ArrayList<NewsItem> items, XmlPullParser parser) throws XmlPullParserException, IOException {
+//        int eventType = parser.next();
+//        // Keep parsing photo elements and converting them to Gallery items until we reach the end of the XML string.
+//        while (eventType != XmlPullParser.END_DOCUMENT){
+//                if (eventType == XmlPullParser.START_TAG && XML_ITEM.equals(parser.getName())){
+//                //Extract image Id
+//                String title = parser.getText("title");
+//                //Extract image Title
+//                String description = parser.getAttributeValue(null, "description");
+//                //Extract url for image Thumbnail
+//                String pubDate = parser.getAttributeValue(null, "pubDate");
+//
+//                //Create new Gallery item for image
+//                NewsItem item = new NewsItem();
+//                item.setTitle(title);
+//                item.setDescription(description);
+//                item.setPubDate(pubDate);
+//                items.add(item);
+//
+//            }
+//            //move to next xml element in the file.
+//            eventType = parser.next();
+//
+//        }
+//    }
      /**
      * Retrieve raw data from a given URL and return it as an array of bytes.
      * @param urlSpec String specifying the URL to access.
@@ -107,7 +176,7 @@ public class NewsFetchr {
             // read 1K of bytes from input stream until nothing left to read.
             // write each set of bytes to the output byte array
             int bytesRead = 0;
-            byte[] buffer = new byte[5000000];
+            byte[] buffer = new byte[500000];
             while ((bytesRead = in.read(buffer))> 0) {
                 out.write(buffer, 0, bytesRead);
             }

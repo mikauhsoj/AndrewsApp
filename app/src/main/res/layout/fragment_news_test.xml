@@ -3,24 +3,19 @@
               xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
               android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <ListView
+    <TextView
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:id="@+id/listMainViewNews"
-        android:layout_gravity="center_horizontal"
-        android:fastScrollEnabled="false"
-        android:fastScrollStyle="@color/material_blue_grey_800"
-        android:fastScrollAlwaysVisible="false"
-        android:nestedScrollingEnabled="true"
-        android:textFilterEnabled="false"
-        android:scrollingCache="true"
-        android:entries="@color/abc_background_cache_hint_selector_material_dark"
-        android:drawSelectorOnTop="false"
-        android:contentDescription="@string/hello_world"
-        tools:listitem="@android:layout/simple_list_item_2"
-        tools:listfooter="@layout/pubdate"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/News_Headlines" />
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/New_Published_Date" />
 </LinearLayout>
