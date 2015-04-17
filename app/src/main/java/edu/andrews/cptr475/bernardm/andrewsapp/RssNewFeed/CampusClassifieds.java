@@ -42,7 +42,7 @@ public class CampusClassifieds extends Activity {
 
         // Start download RSS task
         task.execute("https://www.andrews.edu/agenda/category/Classifieds/rss");
-
+        task.cancel(true);
         // Debug the thread name
         Log.d("CampusNews", Thread.currentThread().getName());
         Log.d("CampusNews2", Thread.currentThread().toString());
@@ -67,6 +67,9 @@ public class CampusClassifieds extends Activity {
             } catch (Exception e) {
                 Log.e("CampusNews", e.getMessage());
                 Log.e("CampusNews2", e.getLocalizedMessage());
+            }
+            if(isCancelled()) {
+                break;
             }
             //titoasads
             return null;
