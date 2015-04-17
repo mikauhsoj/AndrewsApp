@@ -68,9 +68,7 @@ public class CampusClassifieds extends Activity {
                 Log.e("CampusNews", e.getMessage());
                 Log.e("CampusNews2", e.getLocalizedMessage());
             }
-            if(isCancelled()) {
-                break;
-            }
+            
             //titoasads
             return null;
         }
