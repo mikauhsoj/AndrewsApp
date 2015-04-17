@@ -105,7 +105,7 @@ public class LocalDiningActivity extends ActionBarActivity {
 
                 Yelp yelp = new Yelp(api_keys.getYelpConsumerKey(), api_keys.getYelpConsumerSecret(),
                         api_keys.getYelpToken(), api_keys.getYelpTokenSecret());
-                String response = yelp.search("restaurant", "Berrien Springs,MI");
+                String response = yelp.search("restaurant", 41.964473, -86.360150, 1);
 
             //"food", "Berrien+Springs"
                 YelpParser yParser = new YelpParser();

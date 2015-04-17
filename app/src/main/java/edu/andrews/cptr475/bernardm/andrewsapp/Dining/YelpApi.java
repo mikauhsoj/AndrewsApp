@@ -1,12 +1,12 @@
-package edu.andrews.cptr475.bernardm.andrewsapp.YelpApi;
+package edu.andrews.cptr475.bernardm.andrewsapp.Dining;
 
-import org.scribe.model.Token;
 import org.scribe.builder.api.DefaultApi10a;
+import org.scribe.model.Token;
 
 /**
- * Created by bernardm on 4/8/2015.
+ * Service provider for "2-legged" OAuth10a for Yelp API (version 2).
  */
-public class YelpApi2 extends DefaultApi10a {
+public class YelpApi extends DefaultApi10a {
 
     @Override
     public String getAccessTokenEndpoint() {
@@ -22,5 +22,4 @@ public class YelpApi2 extends DefaultApi10a {
     public String getRequestTokenEndpoint() {
         return null;
     }
-
 }

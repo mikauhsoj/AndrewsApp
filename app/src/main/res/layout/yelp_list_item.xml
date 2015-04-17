@@ -6,20 +6,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name: "
-        android:id="@+id/nameTagTextView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Business Name"
         android:id="@+id/businessNameTextView"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/nameTagTextView"
-        android:layout_toEndOf="@+id/nameTagTextView"/>
+        />
 
 
 </RelativeLayout>
