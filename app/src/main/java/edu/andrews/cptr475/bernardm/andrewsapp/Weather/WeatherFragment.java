@@ -36,8 +36,7 @@ public class WeatherFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weather, container, false);
         cityField = (TextView)rootView.findViewById(R.id.city_field);
         updatedField = (TextView)rootView.findViewById(R.id.updated_field);
@@ -62,8 +61,7 @@ public class WeatherFragment extends Fragment {
                     handler.post(new Runnable(){
                         public void run(){
                             Toast.makeText(getActivity(),
-                                    getActivity().getString(R.string.place_not_found),
-                                    Toast.LENGTH_LONG).show();
+                                    getActivity().getString(R.string.place_not_found),Toast.LENGTH_LONG).show();
                         }
                     });
                 } else {
@@ -85,9 +83,7 @@ public class WeatherFragment extends Fragment {
             JSONObject details = json.getJSONArray("weather").getJSONObject(0);
             JSONObject main = json.getJSONObject("main");
             detailsField.setText(
-                    details.getString("description").toUpperCase(Locale.US) +
-                            "\n" + "Humidity: " + main.getString("humidity") + "%" +
-                            "\n" + "Pressure: " + main.getString("pressure") + " hPa");
+                    details.getString("description").toUpperCase(Locale.US) +"\n" + "Humidity: " + main.getString("humidity") + "%" + "\n" + "Pressure: " + main.getString("pressure") + " hPa");
 
             currentTemperatureField.setText(
                     String.format("%.0f", main.getDouble("temp"))+ "\u2109");

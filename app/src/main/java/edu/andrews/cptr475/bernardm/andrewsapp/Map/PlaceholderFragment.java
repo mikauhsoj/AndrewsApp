@@ -3,10 +3,10 @@ package edu.andrews.cptr475.bernardm.andrewsapp.Map;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -25,13 +24,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.Map;
-
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.AboutUs;
-import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.WebviewToursActivity;
-
-import android.support.v4.app.DialogFragment;
 
 /**
  * This is part of the maps class and is a work on progress.
@@ -207,6 +201,7 @@ class AndrewsBuildingsDialogFragment extends DialogFragment {
 
     String Building2;
 
+    @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
 

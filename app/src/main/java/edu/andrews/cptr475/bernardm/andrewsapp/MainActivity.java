@@ -17,7 +17,6 @@ import edu.andrews.cptr475.bernardm.andrewsapp.Dining.DiningActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
-import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.RSSTESTING.NewsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
 import edu.andrews.cptr475.bernardm.andrewsapp.Weather.WeatherActivity;
 
@@ -112,8 +111,8 @@ public class MainActivity extends ActionBarActivity {
         }
 
         /**
-         * Implement when fix NewsActivity.
-         * private void displayrssnews() {
+         * Implement when fix NewsActivity.*/
+        /*  private void displayrssnews() {
 
             Intent i = new Intent(getActivity(), NewsActivity.class);
             getActivity().startActivity(i);

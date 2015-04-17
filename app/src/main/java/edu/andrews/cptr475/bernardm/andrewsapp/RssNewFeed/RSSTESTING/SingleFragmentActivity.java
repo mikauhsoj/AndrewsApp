@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager;
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 public abstract class SingleFragmentActivity extends FragmentActivity {
-    protected abstract Fragment createFragment();
+    protected abstract NewsFragment createFragment();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -18,8 +18,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
         Fragment fragment = manager.findFragmentById(R.id.fragmentContainer);
 
         if (fragment == null) {
-            fragment = createFragment();
-            manager.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
+           // manager.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
         }
     }
 }
