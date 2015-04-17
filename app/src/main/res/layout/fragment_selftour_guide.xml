@@ -27,27 +27,31 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center_horizontal|bottom"
-            android:gravity="bottom">
+            android:gravity="bottom"
+            android:weightSum="1">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Start Tour"
-                android:id="@+id/starttour"/>
+                android:id="@+id/starttour"
+                android:layout_weight=".35" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="About Us"
                 android:id="@+id/aboutus"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="bottom"
+                android:layout_weight=".35" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Guided Tours"
                 android:id="@+id/button3"
-                android:layout_gravity="center_horizontal|bottom|left"/>
+                android:layout_gravity="center_horizontal|bottom|left"
+                android:layout_weight=".35" />
         </LinearLayout>
 
     </FrameLayout>
