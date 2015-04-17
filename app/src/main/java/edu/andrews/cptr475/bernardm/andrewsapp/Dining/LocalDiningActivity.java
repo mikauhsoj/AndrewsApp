@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -83,12 +85,7 @@ public class LocalDiningActivity extends ActionBarActivity {
 
             new GetRestaurants().execute();
 
-            yelpList = (ListView) getActivity().findViewById(R.id.localDiningListView);
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                    getActivity(),
-                    R.layout.yelp_list_item,
-                    yelpArray);
-            yelpList.setAdapter(adapter);
+
 
 
 
@@ -99,41 +96,51 @@ public class LocalDiningActivity extends ActionBarActivity {
             private Exception exception;
 
             protected void onPreExecute() {
-                businessName = (TextView)getActivity().findViewById(R.id.businessNametextView);
+                businessName = (TextView)getActivity().findViewById(R.id.businessNameTextView);
             }
 
             @Override
             protected ArrayList<String> doInBackground(Void... params) {
-                    API_Static_Stuff api_keys = new API_Static_Stuff();
+                API_Static_Stuff api_keys = new API_Static_Stuff();
 
-                    Yelp yelp = new Yelp(api_keys.getYelpConsumerKey(), api_keys.getYelpConsumerSecret(),
-                            api_keys.getYelpToken(), api_keys.getYelpTokenSecret());
-                    String response = yelp.search("burritos", 30.361471, -87.164326);
+                Yelp yelp = new Yelp(api_keys.getYelpConsumerKey(), api_keys.getYelpConsumerSecret(),
+                        api_keys.getYelpToken(), api_keys.getYelpTokenSecret());
+                String response = yelp.search("restaurant", "Berrien Springs,MI");
 
-                //"food", "Berrien+Springs"
-                    YelpParser yParser = new YelpParser();
-                    yParser.setResponse(response);
-                    try {
-                        yParser.parseBusiness();
-                    } catch (JSONException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        //Do whatever you want with the error, like throw a Toast error report
-                    }
+            //"food", "Berrien+Springs"
+                YelpParser yParser = new YelpParser();
+                yParser.setResponse(response);
+                try {
+                    yParser.parseBusiness();
+                } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    //Do whatever you want with the error, like throw a Toast error report
+                    Toast.makeText(getActivity(), "There was an error.", Toast.LENGTH_SHORT).show();
+                }
 
-                    int i = 0;
-                    String mobile_url = yParser.getBusinessMobileURL(i);
-                    String rating_url = yParser.getRatingURL(i);
-                    String b_name = yParser.getBusinessName(i);
-                    Bundle tmpBundle = yParser.getYelpBundle();
-                    ArrayList<String> tmpKeys = yParser.getBundleKeys();
+                int i = 0;
+                String mobile_url = yParser.getBusinessMobileURL(i);
+                String rating_url = yParser.getRatingURL(i);
+                String b_name = yParser.getBusinessName(i);
+                Bundle tmpBundle = yParser.getYelpBundle();
+                ArrayList<String> tmpKeys = yParser.getBundleKeys();
 
-                    return tmpKeys;
+                return tmpKeys;
+
             }
 
             @Override
             protected void onPostExecute(ArrayList<String> array) {
                 yelpArray = array;
+
+                yelpList = (ListView) getActivity().findViewById(R.id.localDiningListView);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                        getActivity(),
+                        R.layout.yelp_list_item,
+                        R.id.businessNameTextView,
+                        yelpArray);
+                yelpList.setAdapter(adapter);
 
             }
 
