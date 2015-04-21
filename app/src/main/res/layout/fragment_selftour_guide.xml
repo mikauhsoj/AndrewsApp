@@ -12,12 +12,12 @@
         android:layout_alignParentBottom="true">
 
         <ViewFlipper
-            android:layout_width="fill_parent"
+            android:layout_width="450dp"
             android:layout_height="fill_parent"
             android:id="@+id/FotosFlipper"
             android:layout_gravity="center|left|top"
             android:autoStart="true"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:animateFirstView="true"
             android:adjustViewBounds="true"
             android:transitionName="@string/abc_activity_chooser_view_see_all"/>
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="Start Tour"
                 android:id="@+id/starttour"
-                android:layout_weight=".35" />
+                android:layout_weight=".35"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                 android:text="About Us"
                 android:id="@+id/aboutus"
                 android:layout_gravity="bottom"
-                android:layout_weight=".35" />
+                android:layout_weight=".35"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
                 android:text="Guided Tours"
                 android:id="@+id/button3"
                 android:layout_gravity="center_horizontal|bottom|left"
-                android:layout_weight=".35" />
+                android:layout_weight=".35"/>
         </LinearLayout>
 
     </FrameLayout>

@@ -1,21 +1,38 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'androidKey'
+            keyPassword 'israelm28'
+            storeFile file('C:/Users/bernardm/Desktop/KEYSTORE/keystore.jks')
+            storePassword 'israelm28'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-
     defaultConfig {
-        applicationId "edu.andrews.cptr475.bernardm.andrewsapp"
+        //the package id is not liked to the project is only used for packagaing.
+        applicationId "edu.andrews.cptr475.bernardm.andrewsapp2"
         minSdkVersion 16
         targetSdkVersion 21
-        versionCode 1
+        versionCode 10
         versionName "1.0"
+        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable true
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
         }
+        buildType {
+        }
+    }
+    productFlavors {
     }
 }
 

@@ -175,13 +175,15 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
-            mcalendar = (Button) rootView.findViewById(R.id.calendar_button);
+
+            ///Calendar feature still needs to be properly implemented.
+           /* mcalendar = (Button) rootView.findViewById(R.id.calendar_button);
             mcalendar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     displayrcalendar();
                 }
-            });
+            });*/
 
             mdirectory = (Button) rootView.findViewById(R.id.directory_button);
             mdirectory.setOnClickListener(new View.OnClickListener() {

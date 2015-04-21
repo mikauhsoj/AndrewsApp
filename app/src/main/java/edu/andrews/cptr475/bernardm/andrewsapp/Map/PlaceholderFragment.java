@@ -37,6 +37,8 @@ public class PlaceholderFragment extends Fragment {
     // private mMap _savedCameraPosition;
     private void setUpMap() {
 
+        //position of the initial camera
+        String Viewposition = "";
         View viewPopUp;
         PopupWindow windowPopUp;
         final String[][] arraymapsr = {{"Andrews University", "41.962708", "-86.359760"},
@@ -46,9 +48,21 @@ public class PlaceholderFragment extends Fragment {
                 {"MeierHall", "41.965497", " -86.361667"},
                 {"University_Towers", "41.966215", "-86.363742"}};
 
+        //  Bundle args = new Bundle();
+        //  args.putString("A", "ehouse");
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(41.962708, -86.359760), 13.0f));
+        ///  Viewposition = getArguments().getString("A").toString();
 
+
+        //  Viewposition.toString();
+
+
+        if (Viewposition.equalsIgnoreCase("Stour")) {
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(41.0, -85), 13.0f));
+            //  args.putString("A", "empty");
+        } else {
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(41.962708, -86.359760), 13.0f));
+        }
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -192,6 +206,7 @@ public class PlaceholderFragment extends Fragment {
 
 
     }
+
 
 }
 
