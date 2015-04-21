@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
 /**
@@ -90,6 +91,14 @@ public class SelfTourGuide extends ActionBarActivity {
             getActivity().startActivity(i);
         }
 
+        private void displaygooglemap() {
+            /**    Create	intent	with	name	of	class	for	second	activity.
+             This	intent	will	be	sent	to	the	Activity	Manager	in	the	OS
+             which	will	launch	the	activity.*/
+            Intent i = new Intent(getActivity(), MapsActivity.class);
+            getActivity().startActivity(i);
+        }
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -118,7 +127,10 @@ public class SelfTourGuide extends ActionBarActivity {
             mwebviewtour.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    displaywebviewtour();
+                    // displaywebviewtour();
+                    Bundle args = new Bundle();
+                    args.putString("A", "Stour");
+                    displaygooglemap();
                 }
 
             });

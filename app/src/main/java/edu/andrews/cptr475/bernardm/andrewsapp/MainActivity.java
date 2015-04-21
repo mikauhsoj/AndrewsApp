@@ -28,13 +28,11 @@ public class MainActivity extends ActionBarActivity {
 
 //Mainactivity updated 3/27/2015
 
-// <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_key"/>
-
+    // <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_key"/>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Actionbar -> trying to get logo to show
         ActionBar actionBar = getSupportActionBar();
         actionBar.setLogo(R.drawable.au_logo);
@@ -53,7 +51,6 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -64,8 +61,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         /** Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.*/
+         // automatically handle clicks on the Home/Up button, so long
+         // as you specify a parent activity in AndroidManifest.xml.*/
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -92,14 +89,13 @@ public class MainActivity extends ActionBarActivity {
         public PlaceholderFragment() {
         }
 
-
         /**
          * Launch	activity	to	display	author	fact
          */
         private void displaygooglemap() {
-            /**	Create	intent	with	name	of	class	for	second	activity.
-            	This	intent	will	be	sent	to	the	Activity	Manager	in	the	OS
-            	which	will	launch	the	activity.*/
+            /**    Create	intent	with	name	of	class	for	second	activity.
+             This	intent	will	be	sent	to	the	Activity	Manager	in	the	OS
+             which	will	launch	the	activity.*/
             Intent i = new Intent(getActivity(), MapsActivity.class);
             getActivity().startActivity(i);
         }
@@ -111,7 +107,8 @@ public class MainActivity extends ActionBarActivity {
         }
 
         /**
-         * Implement when fix NewsActivity.*/
+         * Implement when fix NewsActivity.
+         */
         /*  private void displayrssnews() {
 
             Intent i = new Intent(getActivity(), NewsActivity.class);
@@ -129,16 +126,18 @@ public class MainActivity extends ActionBarActivity {
             getActivity().startActivity(i);
         }
 
+        //changes
         private void displaydirectory() {
             Intent i = new Intent(getActivity(), DirectoryListActivity.class);
             getActivity().startActivity(i);
         }
-        private void displayweather(){
+
+        private void displayweather() {
             Intent i = new Intent(getActivity(), WeatherActivity.class);
             getActivity().startActivity(i);
         }
 
-        private void displaydining(){
+        private void displaydining() {
             Intent i = new Intent(getActivity(), DiningActivity.class);
             getActivity().startActivity(i);
         }
@@ -175,13 +174,15 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
-            mcalendar = (Button) rootView.findViewById(R.id.calendar_button);
+
+            ///Calendar feature still needs to be properly implemented.
+           /* mcalendar = (Button) rootView.findViewById(R.id.calendar_button);
             mcalendar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     displayrcalendar();
                 }
-            });
+            });*/
 
             mdirectory = (Button) rootView.findViewById(R.id.directory_button);
             mdirectory.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +192,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
-            mweather= (Button) rootView.findViewById(R.id.weather_button);
+            mweather = (Button) rootView.findViewById(R.id.weather_button);
             mweather.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -199,7 +200,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
-            mdining= (Button) rootView.findViewById(R.id.food_button);
+            mdining = (Button) rootView.findViewById(R.id.food_button);
             mdining.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

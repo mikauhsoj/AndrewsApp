@@ -73,7 +73,6 @@ public class LocalDiningActivity extends ActionBarActivity {
         ArrayList<String> yelpArray;
 
 
-
         public PlaceholderFragment() {
         }
 
@@ -84,11 +83,6 @@ public class LocalDiningActivity extends ActionBarActivity {
 
 
             new GetRestaurants().execute();
-
-
-
-
-
             return rootView;
         }
 
@@ -96,7 +90,7 @@ public class LocalDiningActivity extends ActionBarActivity {
             private Exception exception;
 
             protected void onPreExecute() {
-                businessName = (TextView)getActivity().findViewById(R.id.businessNameTextView);
+                businessName = (TextView) getActivity().findViewById(R.id.businessNameTextView);
             }
 
             @Override
@@ -107,7 +101,7 @@ public class LocalDiningActivity extends ActionBarActivity {
                         api_keys.getYelpToken(), api_keys.getYelpTokenSecret());
                 String response = yelp.search("restaurant", 41.964473, -86.360150, 1);
 
-            //"food", "Berrien+Springs"
+                //"food", "Berrien+Springs"
                 YelpParser yParser = new YelpParser();
                 yParser.setResponse(response);
                 try {
