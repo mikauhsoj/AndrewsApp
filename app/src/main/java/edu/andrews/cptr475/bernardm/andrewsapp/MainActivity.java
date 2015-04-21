@@ -126,6 +126,7 @@ public class MainActivity extends ActionBarActivity {
             getActivity().startActivity(i);
         }
 
+        //changes
         private void displaydirectory() {
             Intent i = new Intent(getActivity(), DirectoryListActivity.class);
             getActivity().startActivity(i);
