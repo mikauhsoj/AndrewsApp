@@ -53,19 +53,19 @@
             android:label="@string/title_activity_maps">
         </activity>
         <activity
-            android:name=".Tourinfo.SelfTourGuide"
-            android:label="@string/title_activity_selftour_guide">
+            android:name=".VirtualTour.CampusTourActivity"
+            android:label="@string/title_activity_campus_tour">
         </activity>
         <activity
-            android:name=".Tourinfo.AboutUs"
-            android:label="@string/title_activity_aboutus">
+            android:name=".VirtualTour.AboutUsActivity"
+            android:label="@string/title_activity_about_us">
         </activity>
         <activity
-            android:name=".Tourinfo.WebviewToursActivity"
-            android:label="@string/title_activity_webviewtours">
+            android:name=".VirtualTour.VirtualTourActivity"
+            android:label="@string/title_activity_virtual_tour">
         </activity>
         <activity
-            android:name=".Directory.DirectoryListActivity"
+            android:name=".Directory.DirectoryActivity"
             android:label="@string/title_activity_directory">
         </activity>
         <!--Revert to RSSTESTING.NewsActivity -->
@@ -91,7 +91,7 @@
         </activity>
         <activity
             android:name=".Dining.LocalDiningActivity"
-            android:label="title_activity_local_dining">
+            android:label="@string/title_activity_local_dining">
         </activity>
     </application>
 

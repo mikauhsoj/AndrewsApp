@@ -3,13 +3,18 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:minHeight="?android:attr/listPreferredItemHeight"
     >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fnameTextView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/minitTextView"
+        android:paddingLeft="5dp" />
 
     <TextView
         android:layout_width="wrap_content"

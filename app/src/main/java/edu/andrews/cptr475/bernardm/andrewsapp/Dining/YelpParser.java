@@ -51,7 +51,7 @@ public class YelpParser {
         String tmpString;
         for (int i = 0; businesses.length() > i; i++) {
             tmpString = businesses.getJSONObject(i).get("mobile_url").toString() + " ,,, " +
-                    businesses.getJSONObject(i).get("rating_img_url").toString();
+                    businesses.getJSONObject(i).get("rating").toString();
             keys.add(businesses.getJSONObject(i).get("name").toString());
             yelp_bundle.putString(keys.get(i), tmpString);
         }
@@ -133,11 +133,11 @@ public class YelpParser {
      * @param i
      * @return ratingURL
      */
-    public String getRatingURL(int i) {
+    public String getRating(int i) {
         String tmp = yelp_bundle.getString(keys.get(i));
         int x = tmp.indexOf(" ,,, ") + 5;
-        String ratingURL = tmp.substring(x);
-        return ratingURL;
+        String rating = tmp.substring(x);
+        return rating;
     }
 
     /**
@@ -163,7 +163,7 @@ public class YelpParser {
      *
      * @return keys.size()
      */
-    public int getBudleKeysSize() {
+    public int getBundleKeysSize() {
         int size = keys.size();
         return size;
     }

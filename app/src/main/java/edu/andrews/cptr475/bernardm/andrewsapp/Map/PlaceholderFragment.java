@@ -25,7 +25,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
-import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.AboutUs;
+import edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.AboutUsActivity;
 
 /**
  * This is part of the maps class and is a work on progress.
@@ -263,7 +263,7 @@ class AndrewsBuildingsDialogFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         // sign in the user ...
-                        Intent i = new Intent(getActivity(), AboutUs.class);
+                        Intent i = new Intent(getActivity(), AboutUsActivity.class);
                         getActivity().startActivity(i);
                         //    LayoutInflater inflater = getActivity().getLayoutInflater();
                         //   View textview2 = inflater.inflate(R.layout.buildingdetailinfo, null);

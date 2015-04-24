@@ -18,7 +18,6 @@
         android:scrollingCache="true"
         android:entries="@color/abc_background_cache_hint_selector_material_dark"
         android:drawSelectorOnTop="false"
-        android:contentDescription="@string/hello_world"
         tools:listitem="@android:layout/simple_list_item_2"
         tools:listfooter="@layout/pubdate" />
 

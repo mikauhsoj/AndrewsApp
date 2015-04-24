@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/localDiningListView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="54dp"/>
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

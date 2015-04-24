@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo;
+package edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -23,12 +23,12 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
  * @version 0.1
  */
 
-public class SelfTourGuide extends ActionBarActivity {
+public class CampusTourActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selftour_guide);
+        setContentView(R.layout.activity_campus_tour);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -40,7 +40,7 @@ public class SelfTourGuide extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_selftour_guide, menu);
+        getMenuInflater().inflate(R.menu.menu_campus_tour, menu);
         return true;
     }
 
@@ -72,7 +72,7 @@ public class SelfTourGuide extends ActionBarActivity {
 
 
         private void setFlipperImage(Bitmap iv) {
-            //  Log.i("Set Filpper Called", res+"");
+            //  Log.i("Set Flipper Called", res+"");
             ImageView image = new ImageView(getActivity().getApplicationContext());
             //image.setBackgroundResource(res);
             image.setImageBitmap(iv);
@@ -81,13 +81,13 @@ public class SelfTourGuide extends ActionBarActivity {
         }
 
         private void displayaboutuspage() {
-            Intent i = new Intent(getActivity(), AboutUs.class);
+            Intent i = new Intent(getActivity(), AboutUsActivity.class);
             getActivity().startActivity(i);
         }
 
 
         private void displaywebviewtour() {
-            Intent i = new Intent(getActivity(), WebviewToursActivity.class);
+            Intent i = new Intent(getActivity(), VirtualTourActivity.class);
             getActivity().startActivity(i);
         }
 
@@ -102,7 +102,7 @@ public class SelfTourGuide extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_selftour_guide, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_campus_tour, container, false);
             mviewflipper = (ViewFlipper) rootView.findViewById(R.id.FotosFlipper);
             int gallery_grid_Images[] = {R.drawable.globe, R.drawable.seminary};
             for (int i = 0; i < gallery_grid_Images.length; i++) {
