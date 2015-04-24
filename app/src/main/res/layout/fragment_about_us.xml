@@ -2,6 +2,6 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.AboutUs$PlaceholderFragment">
+                tools:context="edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.AboutUsActivity$PlaceholderFragment">
 
 </RelativeLayout>

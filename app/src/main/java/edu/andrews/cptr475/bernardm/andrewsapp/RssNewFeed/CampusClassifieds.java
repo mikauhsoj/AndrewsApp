@@ -33,7 +33,7 @@ public class CampusClassifieds extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set view
-        setContentView(R.layout.fragment_classified);
+        setContentView(R.layout.fragment_classifieds);
 
         // Set reference to this activity
         local = this;

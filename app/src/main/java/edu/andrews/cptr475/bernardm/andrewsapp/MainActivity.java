@@ -13,11 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
-import edu.andrews.cptr475.bernardm.andrewsapp.Dining.DiningActivity;
-import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
+import edu.andrews.cptr475.bernardm.andrewsapp.Dining.LocalDiningActivity;
+import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
-import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
+import edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.CampusTourActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Weather.WeatherActivity;
 
 /**
@@ -102,7 +102,7 @@ public class MainActivity extends ActionBarActivity {
 
         private void displayselftourguide() {
 
-            Intent i = new Intent(getActivity(), SelfTourGuide.class);
+            Intent i = new Intent(getActivity(), CampusTourActivity.class);
             getActivity().startActivity(i);
         }
 
@@ -128,7 +128,7 @@ public class MainActivity extends ActionBarActivity {
 
         //changes
         private void displaydirectory() {
-            Intent i = new Intent(getActivity(), DirectoryListActivity.class);
+            Intent i = new Intent(getActivity(), DirectoryActivity.class);
             getActivity().startActivity(i);
         }
 
@@ -138,7 +138,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         private void displaydining() {
-            Intent i = new Intent(getActivity(), DiningActivity.class);
+            Intent i = new Intent(getActivity(), LocalDiningActivity.class);
             getActivity().startActivity(i);
         }
 
