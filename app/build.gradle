@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'androidKey'
             keyPassword 'israelm28'
-            storeFile file('C:/Users/bernardm/Desktop/KEYSTORE/keystore.jks')
+            storeFile file('Yosemite/Users/drmaq/Android app/app/keystorefile')
             storePassword 'israelm28'
         }
     }
