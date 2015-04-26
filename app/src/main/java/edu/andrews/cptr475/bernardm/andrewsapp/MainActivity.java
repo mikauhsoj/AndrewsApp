@@ -3,14 +3,22 @@ package edu.andrews.cptr475.bernardm.andrewsapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
 import edu.andrews.cptr475.bernardm.andrewsapp.Dining.LocalDiningActivity;
@@ -19,7 +27,6 @@ import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
 import edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.CampusTourActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Weather.WeatherActivity;
-
 /**
  * @author Bernardo Martinez
  * @version 0.1
@@ -27,7 +34,7 @@ import edu.andrews.cptr475.bernardm.andrewsapp.Weather.WeatherActivity;
 public class MainActivity extends ActionBarActivity {
 
 //Mainactivity updated 3/27/2015
-
+//Recycler
     // <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_key"/>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +46,14 @@ public class MainActivity extends ActionBarActivity {
         actionBar.setTitle("");
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
-
+        RecyclerView mRecyclerView;
+        RecyclerView.Adapter mAdapter;
+        // Declaring Layout Manager as a linear layout manager
+        RecyclerView.LayoutManager mLayoutManager;
+        // Declaring DrawerLayout
+        DrawerLayout Drawer = null;
+        // Declaring Action Bar Drawer Toggle
+        ActionBarDrawerToggle mDrawerToggle;
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -47,8 +61,78 @@ public class MainActivity extends ActionBarActivity {
                     .commit();
         }
 
-        //  View v = inflater.inflate(R.layout.fragment_main);
+/*
+        // Assigning the RecyclerView Object to the xml View
+        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
+        // Letting the system know that the list objects are of fixed size
+        mRecyclerView.setHasFixedSize(true);
+        // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        // And passing the titles,icons,header view name, header view email,
+        // and header view profile picture
+        // Attaching the layout to the toolbar object
+        appbar = (Toolbar) findViewById(R.id.app_bar);
+        // Setting our toolbar as the ActionBar with setSupportActionBar() call
+        setSupportActionBar(appbar);
+        appbar.setLogo(R.drawable.au_logo_sm);
 
+
+        mAdapter=null;
+       // mAdapter = new NavDrawerAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE,this);
+        // Setting the adapter to RecyclerView
+        mRecyclerView.setAdapter(mAdapter);
+
+        final GestureDetector mGestureDetector = new GestureDetector(MainActivity.this, new GestureDetector.SimpleOnGestureListener() {
+
+            @Override public boolean onSingleTapUp(MotionEvent e) {
+                return true;
+            }
+        });
+
+        mRecyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
+                View child = recyclerView.findChildViewUnder(motionEvent.getX(),motionEvent.getY());
+
+                if(child!=null && mGestureDetector.onTouchEvent(motionEvent)){
+                    Drawer.closeDrawers();
+                    Toast.makeText(MainActivity.this,"The Item Clicked is: "+recyclerView.getChildPosition(child),Toast.LENGTH_SHORT).show();
+                    return true;
+
+                }
+                return false;
+            }
+            @Override
+            public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
+            }
+        });
+
+        // Creating a layout Manager
+        mLayoutManager = new LinearLayoutManager(this);
+        // Setting the layout Manager
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // Drawer object Assigned to the view
+        Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);
+        mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,appbar,"Open","Close"){
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                // code here will execute once the drawer is opened( As I dont want anything happened whe drawer is
+                // open I am not going to put anything here)
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                // Code here will execute once drawer is closed
+            }
+
+
+        }; // Drawer Toggle Object Made
+        Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
+        mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
+*/
     }
 
     @Override

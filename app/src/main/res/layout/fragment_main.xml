@@ -22,41 +22,38 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/maps_button"
+            android:id="@+id/food_button"
             android:background="@null"
-            android:drawableTop="@drawable/maps_rose_icon"
+            android:drawableTop="@drawable/food_icon"
             android:layout_weight="1"
-            android:text="Map" />
-
+            android:text="Dining"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
+            android:id="@+id/directory_button"
             android:background="@null"
-            android:id="@+id/tour_button"
-            android:drawableTop="@drawable/tour_icon"
+            android:drawableTop="@drawable/directory_icon"
             android:layout_weight="1"
-            android:text="Tour"/>
+            android:text="Directory"/>
 
-
-         <Button
+        <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/shuttle_button"
+            android:id="@+id/maps_button"
             android:background="@null"
-            android:drawableTop="@drawable/shuttle_icon"
+            android:drawableTop="@drawable/maps_rose_icon"
             android:layout_weight="1"
-            android:text="Shuttle"
-             />
+            android:text="Map"/>
 
-         <Button
+        <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/weather_button"
+            android:id="@+id/news_button"
             android:background="@null"
-            android:drawableTop="@drawable/weather_icon"
+            android:drawableTop="@drawable/news_icon"
             android:layout_weight="1"
-            android:text="Weather"/>
+            android:text="News"/>
 
     </LinearLayout>
 
@@ -73,39 +70,40 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/news_button"
             android:background="@null"
-            android:drawableTop="@drawable/news_icon"
+            android:id="@+id/tour_button"
+            android:drawableTop="@drawable/tour_icon"
             android:layout_weight="1"
-            android:text="News"/>
+            android:text="Tour"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/food_button"
+            android:id="@+id/weather_button"
             android:background="@null"
-            android:drawableTop="@drawable/food_icon"
+            android:drawableTop="@drawable/weather_icon"
             android:layout_weight="1"
-            android:text="Dining"/>
+            android:text="Weather"/>
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:id="@+id/library_button"
-            android:background="@null"
-            android:drawableTop="@drawable/library_icon"
-            android:layout_weight="1"
-            android:text="Libraries"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:id="@+id/calendar_button"
             android:background="@null"
-            android:drawableTop="@drawable/calendar_icon"
+            android:drawableTop="@drawable/calendar_icon_gray"
             android:layout_weight="1"
             android:text="Calendar"/>
 
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/library_button"
+            android:background="@null"
+            android:drawableTop="@drawable/library_icon_gray"
+            android:layout_weight="1"
+            android:text="Libraries"/>
 
     </LinearLayout>
 
@@ -119,14 +117,15 @@
         android:paddingTop="16dp"
         android:layout_marginTop="16dp">
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:id="@+id/directory_button"
-        android:background="@null"
-        android:drawableTop="@drawable/directory_icon"
-        android:layout_weight="1"
-        android:text="Directory"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/shuttle_button"
+            android:background="@null"
+            android:drawableTop="@drawable/shuttle_icon_gray"
+            android:layout_weight="1"
+            android:text="Shuttle"
+            />
 
     </LinearLayout>
 
