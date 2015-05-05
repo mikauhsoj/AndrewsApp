@@ -35,47 +35,7 @@ import android.os.AsyncTask;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
 
-
-public class DirectoryActivity extends ActionBarActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_directory);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_directory, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
+public class DirectoryFragment extends Fragment{
         ListView list;
         TextView fname;
         TextView minit;
@@ -94,8 +54,6 @@ public class DirectoryActivity extends ActionBarActivity {
         private static final String TAG_USERNAME = "username";
         JSONArray directory = null;
 
-        public PlaceholderFragment() {
-        }
 
 
         @Override
@@ -124,7 +82,7 @@ public class DirectoryActivity extends ActionBarActivity {
                 @Override
                 public void onClick(View view) {
                     ConnectivityManager cm = (ConnectivityManager)
-                            getActivity().getSystemService(CONNECTIVITY_SERVICE);
+                            getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
                     if (cm.getActiveNetworkInfo() != null) {
                         search();
                     } else {
@@ -139,7 +97,7 @@ public class DirectoryActivity extends ActionBarActivity {
             url = "http://www.andrews.edu/directory/" + searchDirectory.getText().toString() + "/json";
             url = url.replace(" ","%20");
             try  {
-                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
             } catch (Exception e) {
                 Toast.makeText(getActivity(), "There was an error getting the directory.", Toast.LENGTH_LONG).show();
@@ -217,4 +175,4 @@ public class DirectoryActivity extends ActionBarActivity {
             }
         }
     }
-}
+

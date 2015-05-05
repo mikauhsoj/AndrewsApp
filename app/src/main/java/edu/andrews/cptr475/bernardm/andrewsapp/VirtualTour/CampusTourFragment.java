@@ -3,12 +3,10 @@ package edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -23,53 +21,12 @@ import edu.andrews.cptr475.bernardm.andrewsapp.R;
  * @version 0.1
  */
 
-public class CampusTourActivity extends ActionBarActivity {
+public class CampusTourFragment extends Fragment{
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_campus_tour);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_campus_tour, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
         private ViewFlipper mviewflipper;
         private Button maboutus;
         private Button mwebviewtour;
-
-        public PlaceholderFragment() {
-        }
-
+        Fragment objfragment = null;
 
         private void setFlipperImage(Bitmap iv) {
             //  Log.i("Set Flipper Called", res+"");
@@ -81,8 +38,17 @@ public class CampusTourActivity extends ActionBarActivity {
         }
 
         private void displayaboutuspage() {
-            Intent i = new Intent(getActivity(), AboutUsActivity.class);
-            getActivity().startActivity(i);
+
+            ///finished refactoring for projec on fragmetns setup..
+         //   Intent i = new Intent(getActivity(), AboutUsActivity.class);
+          //  getActivity().startActivity(i);
+
+
+            objfragment= new AboutUsFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, objfragment)
+                    .commit();
         }
 
 
@@ -138,4 +104,4 @@ public class CampusTourActivity extends ActionBarActivity {
             return rootView;
         }
     }
-}
+
