@@ -25,7 +25,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
-import edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.AboutUsActivity;
+import edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.AboutUsFragment;
 
 /**
  * This is part of the maps class and is a work on progress.
@@ -136,6 +136,7 @@ public class PlaceholderFragment extends Fragment {
         });
 
     }
+
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
      * installed) and the map has not already been instantiated.. This will ensure that we only ever
@@ -263,7 +264,7 @@ class AndrewsBuildingsDialogFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         // sign in the user ...
-                        Intent i = new Intent(getActivity(), AboutUsActivity.class);
+                        Intent i = new Intent(getActivity(), AboutUsFragment.class);
                         getActivity().startActivity(i);
                         //    LayoutInflater inflater = getActivity().getLayoutInflater();
                         //   View textview2 = inflater.inflate(R.layout.buildingdetailinfo, null);

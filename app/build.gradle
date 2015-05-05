@@ -13,7 +13,7 @@ android {
     buildToolsVersion "21.1.2"
     defaultConfig {
         //the package id is not liked to the project is only used for packagaing.
-        applicationId "edu.andrews.cptr475.bernardm.andrewsapp2"
+        applicationId "edu.andrews.cptr475.bernardm.andrewsapp3"
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 10

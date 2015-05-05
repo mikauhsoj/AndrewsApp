@@ -1,40 +1,40 @@
 package edu.andrews.cptr475.bernardm.andrewsapp;
 
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
-import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
-import edu.andrews.cptr475.bernardm.andrewsapp.Dining.LocalDiningActivity;
-import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryActivity;
+import java.util.List;
+
+import edu.andrews.cptr475.bernardm.andrewsapp.Dining.LocalDiningFragment;
+import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryFragment;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
-import edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.CampusTourActivity;
+import edu.andrews.cptr475.bernardm.andrewsapp.VirtualTour.CampusTourFragment;
 import edu.andrews.cptr475.bernardm.andrewsapp.Weather.WeatherActivity;
 /**
  * @author Bernardo Martinez
  * @version 0.1
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
 //Mainactivity updated 3/27/2015
 //Recycler
+private NavigationDrawerFragment mNavigationDrawerFragment;
+
+    private CharSequence mTitle;
     // <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_key"/>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +50,18 @@ public class MainActivity extends ActionBarActivity {
         RecyclerView.Adapter mAdapter;
         // Declaring Layout Manager as a linear layout manager
         RecyclerView.LayoutManager mLayoutManager;
-        // Declaring DrawerLayout
-        DrawerLayout Drawer = null;
-        // Declaring Action Bar Drawer Toggle
-        ActionBarDrawerToggle mDrawerToggle;
+
+
+
+       /*Navegation drawer inmplementation for the project*/
+        mNavigationDrawerFragment = (NavigationDrawerFragment)
+                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mTitle = getTitle();
+
+        // Set up the drawer.
+        mNavigationDrawerFragment.setUp(
+                R.id.navigation_drawer,
+                (DrawerLayout) findViewById(R.id.DrawerLayout));
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -61,85 +69,97 @@ public class MainActivity extends ActionBarActivity {
                     .commit();
         }
 
-/*
-        // Assigning the RecyclerView Object to the xml View
-        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
-        // Letting the system know that the list objects are of fixed size
-        mRecyclerView.setHasFixedSize(true);
-        // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
-        // And passing the titles,icons,header view name, header view email,
-        // and header view profile picture
-        // Attaching the layout to the toolbar object
-        appbar = (Toolbar) findViewById(R.id.app_bar);
-        // Setting our toolbar as the ActionBar with setSupportActionBar() call
-        setSupportActionBar(appbar);
-        appbar.setLogo(R.drawable.au_logo_sm);
 
-
-        mAdapter=null;
-       // mAdapter = new NavDrawerAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE,this);
-        // Setting the adapter to RecyclerView
-        mRecyclerView.setAdapter(mAdapter);
-
-        final GestureDetector mGestureDetector = new GestureDetector(MainActivity.this, new GestureDetector.SimpleOnGestureListener() {
-
-            @Override public boolean onSingleTapUp(MotionEvent e) {
-                return true;
-            }
-        });
-
-        mRecyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
-                View child = recyclerView.findChildViewUnder(motionEvent.getX(),motionEvent.getY());
-
-                if(child!=null && mGestureDetector.onTouchEvent(motionEvent)){
-                    Drawer.closeDrawers();
-                    Toast.makeText(MainActivity.this,"The Item Clicked is: "+recyclerView.getChildPosition(child),Toast.LENGTH_SHORT).show();
-                    return true;
-
-                }
-                return false;
-            }
-            @Override
-            public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
-            }
-        });
-
-        // Creating a layout Manager
-        mLayoutManager = new LinearLayoutManager(this);
-        // Setting the layout Manager
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        // Drawer object Assigned to the view
-        Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);
-        mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,appbar,"Open","Close"){
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                // code here will execute once the drawer is opened( As I dont want anything happened whe drawer is
-                // open I am not going to put anything here)
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                // Code here will execute once drawer is closed
-            }
-
-
-        }; // Drawer Toggle Object Made
-        Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
-        mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
-*/
     }
 
     @Override
+    public void onNavigationDrawerItemSelected(int position) {
+        Fragment objfragment = null;
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        List<Fragment> al = getSupportFragmentManager().getFragments();
+        String Tag = "";
+        switch (position) {
+            case 0:
+                //allocates the default fragment onto location 1
+                objfragment = new PlaceholderFragment();
+                Tag = "MainScreen";
+                break;
+            case 1:
+
+                objfragment = new CampusTourFragment();
+                //Tramsaction removes get rides of of the previous fragment, a better way needs to be researched
+                transaction.remove(al.get(1));
+                Tag = "CampusTour";
+                break;
+            case 2:
+                objfragment = new LocalDiningFragment();
+                transaction.remove(al.get(1));
+                Tag = "LocalDining";
+                break;
+
+            //place holder is supposed to callled back the base class implementation..
+            case 3:
+                objfragment = new DirectoryFragment();
+                transaction.hide(al.get(1));
+                //  transaction.remove(al.get(1));
+                Tag = "DirectoryFrag";
+                break;
+        }
+        //transaction.remove();
+        String tag = "";
+
+        if (getSupportFragmentManager().getBackStackEntryCount() != 0) {
+            tag = getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
+        }
+
+        if (tag != "") {
+            transaction.addToBackStack(tag).replace(R.id.container, objfragment, Tag)
+                    .commit();
+        } else {
+            transaction.addToBackStack(null).replace(R.id.container, objfragment, Tag)
+                    .commit();
+        }
+    }
+
+    /*
+     This defines the section attached but is not what is diplayed on the screen, the display switch is
+     allocated inside the NavegationDrawerFragment
+     */
+    public void onSectionAttached(int number) {
+        switch (number) {
+            case 1:
+                mTitle = getString(R.string.title_section1);
+                break;
+            case 2:
+                mTitle = getString(R.string.title_section2);
+                break;
+            case 3:
+                mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.Home);
+                break;
+        }
+    }
+
+    public void restoreActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setTitle(mTitle);
+    }
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        if (!mNavigationDrawerFragment.isDrawerOpen()) {
+            // Only show items in the action bar relevant to this screen
+            // if the drawer is not showing. Otherwise, let the drawer
+            // decide what to show in the action bar.
+            getMenuInflater().inflate(R.menu.menu_main, menu);
+            restoreActionBar();
+            return true;
+        }
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -156,6 +176,7 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    ///adress issue of overlaping maps inside of placeholder
 
     /**
      * A placeholder fragment containing a simple view.
@@ -169,8 +190,29 @@ public class MainActivity extends ActionBarActivity {
         private Button mdirectory;
         private Button mweather;
         private Button mdining;
+        Fragment objfragment = null;
 
+        FragmentManager fragmentManager = getFragmentManager();
         public PlaceholderFragment() {
+        }
+
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
         }
 
         /**
@@ -186,8 +228,17 @@ public class MainActivity extends ActionBarActivity {
 
         private void displayselftourguide() {
 
-            Intent i = new Intent(getActivity(), CampusTourActivity.class);
-            getActivity().startActivity(i);
+            objfragment = new CampusTourFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            // FragmentTransaction transaction= fragmentManager.beginTransaction();
+            //List<Fragment> al = this.getSupportFragmentManager().getFragments();
+            //transaction.remove(al.get(1));
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, objfragment, "CampusTour")
+                    .commit();
+
+            //  Intent i = new Intent(getActivity(), CampusTourActivity.class);
+            //getActivity().startActivity(i);
         }
 
         /**
@@ -206,14 +257,17 @@ public class MainActivity extends ActionBarActivity {
 
         private void displayrcalendar() {
 
-            Intent i = new Intent(getActivity(), Calendar.class);
-            getActivity().startActivity(i);
+            //   Intent i = new Intent(getActivity(), Calendar.class);
+            ///  getActivity().startActivity(i);
         }
 
         //changes
         private void displaydirectory() {
-            Intent i = new Intent(getActivity(), DirectoryActivity.class);
-            getActivity().startActivity(i);
+            objfragment = new DirectoryFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, objfragment, "DirectoryFrag")
+                    .commit();
         }
 
         private void displayweather() {
@@ -222,16 +276,20 @@ public class MainActivity extends ActionBarActivity {
         }
 
         private void displaydining() {
-            Intent i = new Intent(getActivity(), LocalDiningActivity.class);
-            getActivity().startActivity(i);
+            objfragment = new LocalDiningFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, objfragment, "LocalDining")
+                    .commit();
+
+            //   Intent i = new Intent(getActivity(), LocalDiningActivity.class);
+            //   getActivity().startActivity(i);
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
             mgooglemaps = (Button) rootView.findViewById(R.id.maps_button);
             mgooglemaps.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -240,7 +298,6 @@ public class MainActivity extends ActionBarActivity {
                 }
 
             });
-
             mselfguidedtour = (Button) rootView.findViewById(R.id.tour_button);
             mselfguidedtour.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -249,7 +306,6 @@ public class MainActivity extends ActionBarActivity {
                 }
 
             });
-
             mnewsrss = (Button) rootView.findViewById(R.id.news_button);
             mnewsrss.setOnClickListener(new View.OnClickListener() {
                 @Override

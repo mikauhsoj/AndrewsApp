@@ -57,9 +57,16 @@
     <string name="yelp_token">GOVJo7QOG1PBbh_Ew8T_3riJrvyF0mvN</string>
     <string name="yelp_token_secret">235orswqKOeQ_co-Iosl7_5RvkY</string>
 
+    <!-- Check second part of inmplementation -->
 
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="Home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="action_example">Example action</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>
